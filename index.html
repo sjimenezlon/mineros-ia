@@ -231,6 +231,46 @@ h3{font-size:1.15rem;font-weight:700;color:var(--azure);margin-bottom:10px}
 .bib-item a:hover{text-decoration:underline}
 /* AOS */
 .ao{opacity:0;transform:translateY(24px);transition:all .6s}.ao.vis{opacity:1;transform:translateY(0)}
+/* ICEBERG SVG */
+.iceberg-wrap{position:relative;width:100%;max-width:820px;margin:36px auto;background:var(--dark-2);border:1px solid var(--dark-4);border-radius:16px;overflow:hidden}
+.iceberg-surface{position:relative;height:auto;padding:32px 40px 24px}
+.iceberg-triangle{width:0;height:0;border-left:120px solid transparent;border-right:120px solid transparent;border-bottom:180px solid rgba(240,242,255,.92);margin:0 auto 20px;filter:drop-shadow(0 4px 24px rgba(240,242,255,.1))}
+.iceberg-top-text{text-align:center;margin-bottom:8px}
+.iceberg-top-text p{font-size:.82rem;color:var(--t2);line-height:1.4}
+.iceberg-top-text .ice-bold{font-size:1rem;font-weight:800;color:var(--t1);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+.iceberg-top-text .ice-sub{font-size:.7rem;color:var(--t3)}
+.iceberg-line{width:100%;height:2px;background:linear-gradient(90deg,transparent 5%,rgba(180,160,120,.5) 20%,rgba(180,160,120,.7) 50%,rgba(180,160,120,.5) 80%,transparent 95%);position:relative}
+.iceberg-line::before{content:'SUPERFICIE';position:absolute;left:16px;top:-8px;font-size:.55rem;font-weight:700;letter-spacing:3px;color:rgba(180,160,120,.6);text-transform:uppercase}
+.iceberg-underwater{background:linear-gradient(180deg,rgba(10,25,50,.95),rgba(5,15,35,.98));padding:32px 40px 36px}
+.iceberg-underwater h4{text-align:center;font-size:.78rem;font-weight:700;color:var(--orange);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
+.ice-bullet{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.ice-bullet:last-child{border-bottom:none}
+.ice-bullet .ice-dot{color:var(--orange);font-size:1rem;flex-shrink:0;margin-top:2px}
+.ice-bullet strong{display:block;font-size:.88rem;font-weight:700;color:var(--t1);margin-bottom:2px}
+.ice-bullet span{font-size:.76rem;color:var(--t3);line-height:1.4}
+.iceberg-footer{text-align:center;padding:20px 40px 28px;background:rgba(5,12,30,.9);border-top:1px solid rgba(248,113,113,.15)}
+.iceberg-footer p{font-size:.92rem;font-weight:700;color:var(--red);line-height:1.6}
+.iceberg-footer .ice-src{font-size:.65rem;color:var(--t3);margin-top:8px;font-weight:400}
+/* PIPELINE PERCEPTION */
+.pipeline-wrap{margin:36px 0}
+.pipeline-box{background:var(--dark-2);border:1px solid var(--dark-4);border-radius:16px;padding:32px;margin-bottom:20px}
+.pipeline-box h4{text-align:center;font-size:1.1rem;font-weight:800;margin-bottom:24px}
+.pipeline-simple{display:flex;align-items:center;justify-content:center;gap:16px}
+.pipe-block{padding:28px 36px;background:rgba(160,180,210,.12);border:1px solid rgba(160,180,210,.2);border-radius:12px;text-align:center;min-width:120px}
+.pipe-block span{font-size:1.1rem;font-weight:800;color:var(--azure)}
+.pipe-arrow{font-size:1.5rem;color:var(--t3)}
+.pipeline-real{margin-top:20px}
+.pipe-phase{margin-bottom:16px}
+.pipe-phase-title{font-size:.75rem;font-weight:700;color:var(--azure);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.pipe-steps{display:flex;gap:6px;flex-wrap:wrap}
+.pipe-step{padding:8px 14px;border-radius:8px;font-size:.7rem;font-weight:600;transition:.3s;cursor:default}
+.pipe-step:hover{transform:translateY(-2px)}
+.pipe-step.data{background:rgba(0,169,224,.1);border:1px solid rgba(0,169,224,.15);color:var(--azure)}
+.pipe-step.eng{background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.15);color:var(--green)}
+.pipe-step.model{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.15);color:var(--yellow)}
+.pipe-step.prod{background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.15);color:var(--orange)}
+.pipe-constraints{margin-top:16px;display:flex;flex-direction:column;gap:4px}
+.pipe-bar{padding:8px 16px;border-radius:6px;font-size:.7rem;font-weight:600;text-align:center;color:var(--purple)}
 /* GLOW */
 .glow-ring{position:absolute;width:300px;height:300px;border-radius:50%;border:1px solid rgba(0,169,224,.06);top:50%;right:-100px;transform:translateY(-50%);pointer-events:none;animation:pulse-ring 4s ease-in-out infinite}
 @keyframes pulse-ring{0%,100%{opacity:.3;transform:translateY(-50%) scale(1)}50%{opacity:.6;transform:translateY(-50%) scale(1.05)}}
@@ -373,20 +413,83 @@ h3{font-size:1.15rem;font-weight:700;color:var(--azure);margin-bottom:10px}
 
   <!-- Iceberg -->
   <h3 style="margin-top:40px;text-align:center;">El Iceberg de la Implementación de IA</h3>
-  <div class="ice ao">
-    <div class="ice-top">
-      <h4>Lo que piden los directivos</h4>
-      <p>"Resultados en 3 meses"<br>"Transformación digital"<br>"Automatización con IA"<br><em style="font-size:.68rem;color:var(--t3)">5% del esfuerzo real</em></p>
+  <div class="iceberg-wrap ao">
+    <div class="iceberg-surface">
+      <div class="iceberg-triangle"></div>
+      <div class="iceberg-top-text">
+        <p>Resultados en 3 meses</p>
+        <p>Transformación digital</p>
+        <p>Reducción de costes</p>
+        <p>Innovación inmediata</p>
+        <div class="ice-bold">IA Y AUTOMATIZACIÓN</div>
+        <div class="ice-sub">Lo que el comité de dirección pide</div>
+      </div>
     </div>
-    <div class="ice-water"></div>
-    <div class="ice-btm">
-      <div class="ice-btm-title">Lo que nadie quiere discutir (95% del esfuerzo)</div>
-      <div class="ice-item"><div>🗄️</div><div><h5>Gobierno del Dato</h5><p>$12.9M anuales en remediación de calidad de datos (Gartner). Sin datos limpios no hay IA.</p></div></div>
-      <div class="ice-item"><div>🏗️</div><div><h5>Infraestructura</h5><p>Costos ocultos inflan TCO 200-400% vs. cotización inicial del vendor.</p></div></div>
-      <div class="ice-item"><div>⏱️</div><div><h5>Preparación de Datos</h5><p>Consume 30-50% del costo total del proyecto. En minería, 60-73% de datos de sensores no se usan (Skillings, 2026).</p></div></div>
-      <div class="ice-item"><div>👥</div><div><h5>Talento</h5><p>La brecha de habilidades en IA es la barrera #1 para integración (Deloitte 2026). Sólo 34% reimaginan su negocio con IA.</p></div></div>
-      <div class="ice-item"><div>🧬</div><div><h5>Cultura Organizativa</h5><p>La adopción de IA es un problema de management, no de tecnología. El obstáculo más silencioso.</p></div></div>
-      <div class="ice-item"><div>⚖️</div><div><h5>Gobernanza y Ética</h5><p>Sólo 20% tienen modelos de supervisión maduros. EU AI Act: multas hasta 7% del revenue global.</p></div></div>
+    <div class="iceberg-line"></div>
+    <div class="iceberg-underwater">
+      <h4>Lo que nadie quiere discutir</h4>
+      <div class="ice-bullet"><div class="ice-dot">&#x2022;</div><div><strong>GOBIERNO DEL DATO</strong><span>Calidad, trazabilidad y propiedad. Sin esto, no hay IA. $12.9M anuales en remediación (Gartner).</span></div></div>
+      <div class="ice-bullet"><div class="ice-dot">&#x2022;</div><div><strong>INFRAESTRUCTURA</strong><span>Sistemas que aguanten el modelo. Cuesta tiempo y dinero. TCO real 200-400% mayor al cotizado.</span></div></div>
+      <div class="ice-bullet"><div class="ice-dot">&#x2022;</div><div><strong>EQUIPO CON CAPACIDAD</strong><span>Para absorber, operar y mantener. Al límite en la mayoría. Brecha de habilidades = barrera #1 (Deloitte).</span></div></div>
+      <div class="ice-bullet"><div class="ice-dot">&#x2022;</div><div><strong>PRESUPUESTO REAL</strong><span>No el de los pilotos. El de escalar. Nadie lo asigna. Datos: 30-50% del costo total del proyecto.</span></div></div>
+      <div class="ice-bullet"><div class="ice-dot">&#x2022;</div><div><strong>CULTURA ORGANIZATIVA</strong><span>Disposición real al cambio. El obstáculo más silencioso. Sólo 34% reimaginan su negocio con IA.</span></div></div>
+    </div>
+    <div class="iceberg-footer">
+      <p>El 88% de los pilotos de IA nunca llega a producción.<br>El 95% de los que escalan no genera impacto medible.</p>
+      <div class="ice-src">IDC 2025 &middot; MIT NANDA 2025</div>
+    </div>
+  </div>
+
+  <!-- Pipeline: Percepción vs. Realidad -->
+  <h3 style="margin-top:44px;text-align:center;">El Pipeline de IA: Percepción vs. Realidad</h3>
+  <div class="pipeline-wrap ao">
+    <div class="pipeline-box">
+      <h4 style="color:var(--t2)">Cómo creen las empresas que es la IA</h4>
+      <div class="pipeline-simple">
+        <div class="pipe-block"><span>Datos</span></div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-block"><span>IA</span></div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-block"><span>Valor</span></div>
+      </div>
+    </div>
+
+    <div class="pipeline-box">
+      <h4 style="color:var(--t1)">Cómo es en realidad</h4>
+      <div class="g3" style="margin-top:0;gap:16px">
+        <div>
+          <div class="pipe-phase-title">Datos</div>
+          <div class="pipe-steps">
+            <div class="pipe-step data">Recopilación</div>
+            <div class="pipe-step data">Almacenamiento</div>
+            <div class="pipe-step data">Síntesis</div>
+          </div>
+        </div>
+        <div>
+          <div class="pipe-phase-title" style="color:var(--green)">Ciencia de Datos</div>
+          <div style="display:flex;gap:8px;margin-bottom:8px">
+            <div style="flex:1"><div style="font-size:.6rem;font-weight:600;color:var(--green);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Ingeniería de Datos</div>
+              <div class="pipe-steps"><div class="pipe-step eng">Exploración</div><div class="pipe-step eng">Limpieza</div><div class="pipe-step eng">Normalización</div><div class="pipe-step eng">Preparación</div><div class="pipe-step eng">Escalado</div></div>
+            </div>
+            <div style="flex:1"><div style="font-size:.6rem;font-weight:600;color:var(--yellow);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Modelado</div>
+              <div class="pipe-steps"><div class="pipe-step model">Selección</div><div class="pipe-step model">Entrenamiento</div><div class="pipe-step model">Evaluación</div><div class="pipe-step model">Ajuste</div></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="pipe-phase-title" style="color:var(--orange)">Valor</div>
+          <div style="font-size:.6rem;font-weight:600;color:var(--orange);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px">Puesta en producción</div>
+          <div class="pipe-steps"><div class="pipe-step prod">Registro</div><div class="pipe-step prod">Despliegue</div><div class="pipe-step prod">Monitorización</div><div class="pipe-step prod">Reentrenamiento</div></div>
+        </div>
+      </div>
+      <div class="pipe-constraints">
+        <div style="font-size:.65rem;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:1px;margin:12px 0 6px">Restricciones transversales</div>
+        <div class="pipe-bar" style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.12)">Legal</div>
+        <div class="pipe-bar" style="background:rgba(167,139,250,.06);border:1px solid rgba(167,139,250,.1)">Ética / Transparencia</div>
+        <div class="pipe-bar" style="background:rgba(167,139,250,.05);border:1px solid rgba(167,139,250,.08)">Histórico (sesgos)</div>
+        <div class="pipe-bar" style="background:rgba(167,139,250,.04);border:1px solid rgba(167,139,250,.06)">Seguridad</div>
+      </div>
+      <p style="font-size:.65rem;color:var(--t3);margin-top:12px;text-align:center">Adaptado de Marc Griful — IA y Tech aplicada a las organizaciones</p>
     </div>
   </div>
 
