@@ -69,17 +69,6 @@ h3{font-size:1.15rem;font-weight:700;color:var(--azure);margin-bottom:10px}
 .bl{width:220px;font-size:.78rem;font-weight:600;text-align:right;flex-shrink:0;color:var(--t2)}
 .bt{flex:1;height:28px;background:var(--dark-3);border-radius:7px;overflow:hidden}
 .bf{height:100%;border-radius:7px;display:flex;align-items:center;padding-left:12px;font-size:.72rem;font-weight:700;color:var(--dark);width:0;transition:width 1.5s cubic-bezier(.25,.46,.45,.94)}
-/* TIMELINE */
-.tl{position:relative;margin:44px 0;padding-left:56px}
-.tl::before{content:'';position:absolute;left:22px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--azure),var(--zafre))}
-.ti{position:relative;margin-bottom:32px;padding:20px 24px;background:var(--dark-2);border:1px solid var(--dark-4);border-radius:11px;cursor:pointer;transition:.3s}
-.ti:hover{border-color:rgba(0,169,224,.25);transform:translateX(6px)}
-.ti::before{content:'';position:absolute;left:-46px;top:26px;width:12px;height:12px;border-radius:50%;background:var(--azure);border:3px solid var(--dark);z-index:1}
-.ty{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--azure);font-weight:600;letter-spacing:2px}
-.tt{font-size:1rem;font-weight:700;margin:5px 0}
-.td{color:var(--t2);font-size:.84rem;line-height:1.6;display:none}
-.ti.open .td{display:block;margin-top:6px}
-.tg{font-size:.68rem;color:var(--azure);margin-top:4px;display:inline-block}
 /* TABS */
 .th{display:flex;gap:3px;background:var(--dark-2);border-radius:11px;padding:3px;overflow-x:auto}
 .tb{padding:10px 18px;background:transparent;border:none;color:var(--t2);font-family:'Inter',sans-serif;font-size:.78rem;font-weight:600;border-radius:9px;cursor:pointer;transition:.3s;white-space:nowrap}
@@ -176,9 +165,6 @@ h3{font-size:1.15rem;font-weight:700;color:var(--azure);margin-bottom:10px}
 .tbl tr:hover td{background:var(--dark-3)}
 /* GRADIENT BORDER */
 .gb{background:linear-gradient(var(--dark-2),var(--dark-2)) padding-box,linear-gradient(135deg,var(--azure),var(--zafre)) border-box;border:2px solid transparent}
-/* CODE */
-.code{background:var(--dark-3);border:1px solid var(--dark-4);border-radius:10px;padding:20px;font-family:'JetBrains Mono',monospace;font-size:.74rem;line-height:1.8;overflow-x:auto;margin:14px 0}
-.code .cm{color:var(--t3)}.code .kw{color:var(--purple)}.code .st{color:var(--green)}.code .fn{color:var(--azure)}.code .tp{color:var(--orange)}
 /* CASE STUDY CARDS */
 .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
 .case-card{background:var(--dark-2);border:1px solid var(--dark-4);border-radius:14px;padding:0;overflow:hidden;transition:.35s;cursor:pointer}
@@ -216,6 +202,15 @@ h3{font-size:1.15rem;font-weight:700;color:var(--azure);margin-bottom:10px}
 .sim-btn .sim-name{font-size:.82rem;font-weight:700}
 .sim-result{display:none;background:var(--dark-2);border:1px solid var(--dark-4);border-radius:16px;padding:28px;margin-top:20px;animation:fi .4s}
 .sim-result.active{display:block}
+/* STRATEGY */
+.strat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:28px 0}
+.strat-card{padding:22px 16px;background:var(--dark-2);border:1px solid var(--dark-4);border-radius:14px;text-align:center;transition:.35s;cursor:pointer;position:relative}
+.strat-card:hover{border-color:rgba(0,169,224,.3);transform:translateY(-3px)}
+.strat-card .strat-num{font-size:1.8rem;font-weight:900;font-family:'JetBrains Mono',monospace;color:var(--azure);opacity:.4;margin-bottom:6px}
+.strat-card.active .strat-num{opacity:1}
+.strat-card .strat-name{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.strat-detail{display:none;background:var(--dark-2);border:1px solid var(--dark-4);border-radius:14px;padding:28px;margin-top:16px;animation:fi .3s}
+.strat-detail.active{display:block}
 /* SESSION TEASERS */
 .session-teaser{background:var(--dark-2);border:1px solid var(--dark-4);border-radius:16px;padding:32px;text-align:center;transition:.3s;position:relative;overflow:hidden}
 .session-teaser::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,169,224,.03),rgba(167,139,250,.03));pointer-events:none}
@@ -236,34 +231,33 @@ h3{font-size:1.15rem;font-weight:700;color:var(--azure);margin-bottom:10px}
 .bib-item a:hover{text-decoration:underline}
 /* AOS */
 .ao{opacity:0;transform:translateY(24px);transition:all .6s}.ao.vis{opacity:1;transform:translateY(0)}
-/* GLOW RING */
+/* GLOW */
 .glow-ring{position:absolute;width:300px;height:300px;border-radius:50%;border:1px solid rgba(0,169,224,.06);top:50%;right:-100px;transform:translateY(-50%);pointer-events:none;animation:pulse-ring 4s ease-in-out infinite}
 @keyframes pulse-ring{0%,100%{opacity:.3;transform:translateY(-50%) scale(1)}50%{opacity:.6;transform:translateY(-50%) scale(1.05)}}
-/* FLOATING LABEL */
-.float-label{position:absolute;font-size:.55rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);writing-mode:vertical-rl;right:40px;top:50%;transform:translateY(-50%);opacity:.3}
 /* RESPONSIVE */
-@media(max-width:1024px){.S{padding:100px 24px 56px}.g3,.cg,.case-grid{grid-template-columns:repeat(2,1fr)}.g4{grid-template-columns:repeat(2,1fr)}.g2,.calc-in,.calc-r,.assess-wrap{grid-template-columns:1fr}.jtbd-grid{grid-template-columns:1fr}.discovery{flex-wrap:wrap}.disc-phase{min-width:50%}.sim-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.g3,.cg,.g4,.case-grid,.sim-grid{grid-template-columns:1fr}.hero-stats{flex-direction:column;gap:20px}.nav-links{display:none}.tv-flow{min-width:auto;flex-wrap:wrap}.bl{width:100px;font-size:.68rem}}
+@media(max-width:1024px){.S{padding:100px 24px 56px}.g3,.cg,.case-grid{grid-template-columns:repeat(2,1fr)}.g4,.strat-grid{grid-template-columns:repeat(2,1fr)}.g2,.calc-in,.calc-r,.assess-wrap{grid-template-columns:1fr}.jtbd-grid{grid-template-columns:1fr}.discovery{flex-wrap:wrap}.disc-phase{min-width:50%}.sim-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.g3,.cg,.g4,.case-grid,.sim-grid,.strat-grid{grid-template-columns:1fr}.hero-stats{flex-direction:column;gap:20px}.nav-links{display:none}.tv-flow{min-width:auto;flex-wrap:wrap}.bl{width:100px;font-size:.68rem}}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav" id="mainNav">
-  <div class="nav-brand"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_EAFIT.svg" alt="EAFIT" style="height:28px;filter:brightness(0) invert(1)"><span>NODO</span><span class="session-badge">SESION 1 de 3</span></div>
+  <div class="nav-brand"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_EAFIT.svg" alt="EAFIT" style="height:28px;filter:brightness(0) invert(1)"><span>NODO</span><span class="session-badge">SESIÓN 1 de 3</span></div>
   <div class="nav-links">
     <a href="#hero">Inicio</a>
-    <a href="#what-is-ai">Que es IA</a>
+    <a href="#what-is-ai">Qué es IA</a>
     <a href="#failures">Realidad</a>
     <a href="#roi">ROI</a>
     <a href="#governance">Gobernanza</a>
     <a href="#value">Valor Real</a>
     <a href="#cases">Casos Reales</a>
+    <a href="#strategy">Estrategia</a>
     <a href="#assessment">Assessment</a>
     <a href="#simulator">Simulador</a>
-    <a href="#transformation">Transformacion</a>
+    <a href="#transformation">Transformación</a>
     <a href="#culture">Cultura</a>
-    <a href="#next-sessions">Proximas</a>
+    <a href="#next-sessions">Próximas</a>
   </div>
   <div class="nav-progress" id="navProg"></div>
 </nav>
@@ -275,150 +269,139 @@ h3{font-size:1.15rem;font-weight:700;color:var(--azure);margin-bottom:10px}
   <div class="particles" id="pts"></div>
   <div class="glow-ring"></div>
   <div style="position:relative;z-index:1;">
-    <div class="badge"><span class="dot"></span>Sesion 1 de 3 — AI First: Mineria Inteligente</div>
+    <div class="badge"><span class="dot"></span>Sesión 1 de 3 — AI First: Minería Inteligente</div>
     <h1>Inteligencia Artificial<br>Aplicada al Sector Minero</h1>
-    <p class="sub">De la teoria a la practica: que es realmente la IA, por que el 80% de los proyectos fallan, como medir el retorno, y que genera valor de verdad. Una sesion para pensar la IA como aliado estrategico.</p>
+    <p class="sub">De la teoría a la práctica: qué es realmente la IA, por qué el 80% de los proyectos fallan, cómo medir el retorno, y qué genera valor de verdad. Una sesión para pensar la IA como aliado estratégico.</p>
     <div class="hero-stats">
       <div><div class="hsv" data-target="80" data-suffix="%">0%</div><div class="hsl">Proyectos IA fallan (RAND Corp.)</div></div>
-      <div><div class="hsv" data-target="665" data-suffix="B">$0</div><div class="hsl">Gasto global IA 2026</div></div>
-      <div><div class="hsv" data-target="95" data-suffix="%">0%</div><div class="hsl">Pilotos GenAI sin impacto P&L (MIT)</div></div>
-      <div><div class="hsv" data-target="62" data-suffix="%">0%</div><div class="hsl">Citan gobernanza como barrera</div></div>
+      <div><div class="hsv" data-target="665" data-suffix="B">$0</div><div class="hsl">Gasto global IA 2026 (IDC)</div></div>
+      <div><div class="hsv" data-target="77" data-suffix="%">0%</div><div class="hsl">Exploración minera ya usa IA (CIM)</div></div>
+      <div><div class="hsv" data-target="66" data-suffix="%">0%</div><div class="hsl">Logran ganancias en productividad (Deloitte)</div></div>
     </div>
     <div style="margin-top:48px;padding-top:16px;border-top:1px solid var(--dark-4);display:flex;align-items:center;gap:14px">
       <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_EAFIT.svg" alt="EAFIT" style="height:36px;filter:brightness(0) invert(1);margin-right:10px">
       <span style="font-weight:900;font-size:1.1rem;color:var(--azure);letter-spacing:3px">NODO</span>
-      <span style="color:var(--t3);font-size:.75rem;margin-left:8px">Sesion 1 de 3 &middot; Abril 2026</span>
+      <span style="color:var(--t3);font-size:.75rem;margin-left:8px">Sesión 1 de 3 &middot; Abril 2026</span>
     </div>
   </div>
 </section>
 
-<!-- ===== 2. QUE ES IA — COMPONENTES TECNICOS ===== -->
+<!-- ===== 2. QUÉ ES IA ===== -->
 <section class="S" id="what-is-ai">
-  <div class="sn">01 — Fundamentos Tecnicos</div>
-  <h2>Que es la Inteligencia Artificial?<br>Anatomia de un LLM</h2>
-  <p class="sub">Antes de hablar de implementacion, entendamos que hay dentro de la maquina. Un LLM es, en esencia, un predictor de tokens — y entender eso cambia toda la conversacion estrategica.</p>
+  <div class="sn">01 — Fundamentos Técnicos</div>
+  <h2>¿Qué es la Inteligencia Artificial?<br>Anatomía de un LLM</h2>
+  <p class="sub">Antes de hablar de implementación, entendamos qué hay dentro de la máquina. Un LLM es, en esencia, un predictor de tokens — y entender eso cambia toda la conversación estratégica.</p>
 
-  <!-- TRANSFORMER VISUALIZATION -->
   <div class="transformer-viz ao">
     <h3 style="text-align:center;margin-bottom:20px;">El Viaje de un Texto Dentro de un LLM</h3>
-    <p style="text-align:center;font-size:.78rem;color:var(--t3);margin-bottom:16px;">Haz clic en cada bloque para entender que sucede</p>
+    <p style="text-align:center;font-size:.78rem;color:var(--t3);margin-bottom:16px;">Haz clic en cada bloque para entender qué sucede</p>
     <div class="tv-flow">
       <div class="tv-block" style="background:rgba(251,146,60,.12);border:1px solid rgba(251,146,60,.25)" onclick="showTV(0)">
-        <h4 style="color:var(--orange)">Texto</h4>
-        <p>"La mina produce oro"</p>
+        <h4 style="color:var(--orange)">Texto</h4><p>"La mina produce oro"</p>
       </div>
       <div class="tv-arrow">→</div>
       <div class="tv-block" style="background:rgba(0,169,224,.1);border:1px solid rgba(0,169,224,.2)" onclick="showTV(1)">
-        <h4 style="color:var(--azure)">Tokenizacion</h4>
-        <p>[La][_mina][_produce][_oro]</p>
+        <h4 style="color:var(--azure)">Tokenización</h4><p>[La][_mina][_produce][_oro]</p>
       </div>
       <div class="tv-arrow">→</div>
       <div class="tv-block" style="background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2)" onclick="showTV(2)">
-        <h4 style="color:var(--purple)">Embedding</h4>
-        <p>[0.23, -0.87, 1.4, ...]</p>
+        <h4 style="color:var(--purple)">Embedding</h4><p>[0.23, -0.87, 1.4, ...]</p>
       </div>
       <div class="tv-arrow">→</div>
       <div class="tv-block" style="background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2)" onclick="showTV(3)">
-        <h4 style="color:var(--green)">Atencion</h4>
-        <p>Q &middot; K &middot; V</p>
+        <h4 style="color:var(--green)">Atención</h4><p>Q &middot; K &middot; V</p>
       </div>
       <div class="tv-arrow">→</div>
       <div class="tv-block" style="background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.2)" onclick="showTV(4)">
-        <h4 style="color:var(--red)">Transformer x N</h4>
-        <p>96 capas (GPT-4)</p>
+        <h4 style="color:var(--red)">Transformer × N</h4><p>96 capas (GPT-4)</p>
       </div>
       <div class="tv-arrow">→</div>
       <div class="tv-block" style="background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.25)" onclick="showTV(5)">
-        <h4 style="color:var(--yellow)">Prediccion</h4>
-        <p>Siguiente token mas probable</p>
+        <h4 style="color:var(--yellow)">Predicción</h4><p>Siguiente token más probable</p>
       </div>
     </div>
-    <div class="tv-detail" id="tv-0"><h3 style="color:var(--orange)">Texto de Entrada</h3><p style="color:var(--t2);line-height:1.7;margin-top:8px">Todo comienza con texto en lenguaje natural. La IA no "entiende" lenguaje humano directamente. El texto debe ser convertido en representaciones numericas que la red neuronal pueda procesar.</p></div>
-    <div class="tv-detail" id="tv-1"><h3 style="color:var(--azure)">Tokenizacion</h3><p style="color:var(--t2);line-height:1.7;margin-top:8px">El texto se divide en <strong>tokens</strong> — unidades de texto que pueden ser palabras completas, subpalabras o caracteres. "La mina produce oro" se convierte en ~4 tokens. GPT-4 usa ~100,000 tokens en su vocabulario. Cada token recibe un ID numerico unico. <strong>Los precios de las APIs se cobran por token</strong> — por eso entender esto es critico para costos.</p></div>
-    <div class="tv-detail" id="tv-2"><h3 style="color:var(--purple)">Embedding (Vectores)</h3><p style="color:var(--t2);line-height:1.7;margin-top:8px">Cada token se convierte en un vector de alta dimension (ej., 12,288 dimensiones en GPT-4). Estos vectores capturan el <strong>significado semantico</strong>: palabras similares tienen vectores cercanos en el espacio. Se agrega <strong>encoding posicional</strong> para que el modelo sepa la posicion de cada token en la secuencia.</p></div>
-    <div class="tv-detail" id="tv-3"><h3 style="color:var(--green)">Mecanismo de Atencion (Self-Attention)</h3><p style="color:var(--t2);line-height:1.7;margin-top:8px">La innovacion clave de los Transformers (2017). Cada token "mira" a todos los demas y calcula que tan relevante es cada uno para entenderse. Usa tres matrices: <strong>Query</strong> (que busco), <strong>Key</strong> (que ofrezco), <strong>Value</strong> (mi contenido). La atencion multi-cabeza divide esto en 12-128 "cabezas" paralelas, cada una capturando relaciones diferentes.</p></div>
-    <div class="tv-detail" id="tv-4"><h3 style="color:var(--red)">Bloques Transformer Apilados</h3><p style="color:var(--t2);line-height:1.7;margin-top:8px">Un bloque Transformer = atencion multi-cabeza + red feedforward (MLP). GPT-4 tiene ~96 bloques apilados. Cada capa refina la representacion: las primeras captan sintaxis, las intermedias semantica, las profundas razonamiento abstracto. <strong>Todos los tokens se procesan en paralelo</strong> — esto permite la escala en GPUs.</p></div>
-    <div class="tv-detail" id="tv-5"><h3 style="color:var(--yellow)">Prediccion del Siguiente Token</h3><p style="color:var(--t2);line-height:1.7;margin-top:8px">Al final, el modelo genera una distribucion de probabilidad sobre todos los tokens posibles (~100K). "La mina produce ___" → p("oro")=0.32, p("cobre")=0.18, p("plata")=0.12... Se selecciona con temperatura que controla aleatoriedad y el proceso se repite. <strong>Un LLM es fundamentalmente un predictor de tokens.</strong></p></div>
+    <div class="tv-detail" id="tv-0"><h3 style="color:var(--orange)">Texto de Entrada</h3><p style="color:var(--t2);line-height:1.7;margin-top:8px">Todo comienza con texto en lenguaje natural. La IA no "entiende" lenguaje humano directamente. El texto debe ser convertido en representaciones numéricas que la red neuronal pueda procesar.</p></div>
+    <div class="tv-detail" id="tv-1"><h3 style="color:var(--azure)">Tokenización</h3><p style="color:var(--t2);line-height:1.7;margin-top:8px">El texto se divide en <strong>tokens</strong> — unidades que pueden ser palabras completas, subpalabras o caracteres. "La mina produce oro" se convierte en ~4 tokens. GPT-4 usa ~100,000 tokens en su vocabulario. <strong>Los precios de las APIs se cobran por token</strong> — entender esto es crítico para costos.</p></div>
+    <div class="tv-detail" id="tv-2"><h3 style="color:var(--purple)">Embedding (Vectores)</h3><p style="color:var(--t2);line-height:1.7;margin-top:8px">Cada token se convierte en un vector de alta dimensión (ej., 12,288 dimensiones en GPT-4). Estos vectores capturan el <strong>significado semántico</strong>: palabras similares tienen vectores cercanos en el espacio. Se agrega <strong>encoding posicional</strong> para que el modelo sepa la posición de cada token en la secuencia.</p></div>
+    <div class="tv-detail" id="tv-3"><h3 style="color:var(--green)">Mecanismo de Atención (Self-Attention)</h3><p style="color:var(--t2);line-height:1.7;margin-top:8px">La innovación clave de los Transformers (2017). Cada token "mira" a todos los demás y calcula qué tan relevante es cada uno. Usa tres matrices: <strong>Query</strong> (qué busco), <strong>Key</strong> (qué ofrezco), <strong>Value</strong> (mi contenido). La atención multi-cabeza divide esto en 12-128 "cabezas" paralelas, cada una capturando relaciones diferentes.</p></div>
+    <div class="tv-detail" id="tv-4"><h3 style="color:var(--red)">Bloques Transformer Apilados</h3><p style="color:var(--t2);line-height:1.7;margin-top:8px">Un bloque Transformer = atención multi-cabeza + red feedforward (MLP). GPT-4 tiene ~96 bloques apilados. Cada capa refina la representación: las primeras captan sintaxis, las intermedias semántica, las profundas razonamiento abstracto. <strong>Todos los tokens se procesan en paralelo</strong> — esto permite la escala en GPUs.</p></div>
+    <div class="tv-detail" id="tv-5"><h3 style="color:var(--yellow)">Predicción del Siguiente Token</h3><p style="color:var(--t2);line-height:1.7;margin-top:8px">Al final, el modelo genera una distribución de probabilidad sobre todos los tokens posibles (~100K). "La mina produce ___" → p("oro")=0.32, p("cobre")=0.18, p("plata")=0.12... Se selecciona con temperatura que controla aleatoriedad y el proceso se repite. <strong>Un LLM es fundamentalmente un predictor de tokens.</strong></p></div>
   </div>
 
-  <!-- INTERACTIVE TOKEN DEMO -->
   <div class="token-demo ao">
     <h3>Tokenizador Interactivo</h3>
-    <p style="font-size:.82rem;color:var(--t3);margin-bottom:12px;">Escribe un texto y mira como se divide en tokens (simulacion simplificada)</p>
-    <input type="text" class="token-input" id="tokenInput" placeholder="Escribe aqui... ej: La inteligencia artificial transforma la mineria" oninput="tokenize(this.value)">
+    <p style="font-size:.82rem;color:var(--t3);margin-bottom:12px;">Escribe un texto y mira cómo se divide en tokens (simulación simplificada)</p>
+    <input type="text" class="token-input" id="tokenInput" placeholder="Escribe aquí... ej: La inteligencia artificial transforma la minería" oninput="tokenize(this.value)">
     <div class="token-output" id="tokenOutput"></div>
     <div class="token-count" id="tokenCount"></div>
   </div>
 
-  <!-- KEY CONCEPTS GRID -->
   <h3 style="margin-top:36px;">Conceptos Clave que Todo Directivo Debe Conocer</h3>
   <div class="g3 ao">
-    <div class="c"><div class="ci" style="background:rgba(0,169,224,.1)">🧠</div><h3>LLM</h3><p>Large Language Model. Red neuronal con miles de millones de parametros entrenada en texto masivo. Predice tokens. No "piensa" — calcula probabilidades.</p></div>
-    <div class="c"><div class="ci" style="background:rgba(167,139,250,.1)">🔤</div><h3>Token</h3><p>Unidad minima de texto. ~1 token ≈ 3/4 de palabra en ingles. Los costos de API se miden en tokens. GPT-4: ~$30/1M tokens de entrada.</p></div>
+    <div class="c"><div class="ci" style="background:rgba(0,169,224,.1)">🧠</div><h3>LLM</h3><p>Large Language Model. Red neuronal con miles de millones de parámetros entrenada en texto masivo. Predice tokens. No "piensa" — calcula probabilidades.</p></div>
+    <div class="c"><div class="ci" style="background:rgba(167,139,250,.1)">🔤</div><h3>Token</h3><p>Unidad mínima de texto. ~1 token ≈ ¾ de palabra en inglés. Los costos de API se miden en tokens. GPT-4: ~$30/1M tokens de entrada.</p></div>
     <div class="c"><div class="ci" style="background:rgba(52,211,153,.1)">🎯</div><h3>Fine-tuning</h3><p>Entrenar un modelo base con datos propios de la empresa para especializarlo. Costoso pero poderoso. Alternativa: RAG (Retrieval Augmented Generation).</p></div>
-    <div class="c"><div class="ci" style="background:rgba(251,146,60,.1)">📚</div><h3>RAG</h3><p>Retrieval-Augmented Generation. El modelo busca en tu base de datos antes de responder. Mas barato que fine-tuning, actualizable en tiempo real.</p></div>
-    <div class="c"><div class="ci" style="background:rgba(248,113,113,.1)">🤖</div><h3>Agente</h3><p>LLM + herramientas + autonomia. Puede razonar, planificar, ejecutar acciones y usar APIs. El siguiente nivel despues de los chatbots.</p></div>
-    <div class="c"><div class="ci" style="background:rgba(0,0,102,.2)">🔌</div><h3>MCP</h3><p>Model Context Protocol. Estandar abierto (Anthropic, 2024) para conectar agentes IA con sistemas empresariales. Adoptado masivamente en 2026.</p></div>
+    <div class="c"><div class="ci" style="background:rgba(251,146,60,.1)">📚</div><h3>RAG</h3><p>Retrieval-Augmented Generation. El modelo busca en tu base de datos antes de responder. Más barato que fine-tuning, actualizable en tiempo real.</p></div>
+    <div class="c"><div class="ci" style="background:rgba(248,113,113,.1)">🤖</div><h3>Agente</h3><p>LLM + herramientas + autonomía. Puede razonar, planificar, ejecutar acciones y usar APIs. El siguiente nivel después de los chatbots.</p></div>
+    <div class="c"><div class="ci" style="background:rgba(0,0,102,.2)">🔌</div><h3>MCP</h3><p>Model Context Protocol. Estándar abierto (Anthropic, 2024) para conectar agentes IA con sistemas empresariales. Adoptado masivamente en 2026.</p></div>
   </div>
 
-  <!-- QUIZ 1 -->
   <div class="qc ao" id="quiz1">
     <div class="qq">🧪 Checkpoint: Un LLM fundamentalmente...</div>
     <div class="qos">
       <div class="qo" onclick="checkQ(this,'quiz1',false)"><span class="ql">A</span>Entiende el significado profundo del texto como un humano</div>
-      <div class="qo" onclick="checkQ(this,'quiz1',true)"><span class="ql">B</span>Predice el siguiente token mas probable basado en patrones estadisticos</div>
+      <div class="qo" onclick="checkQ(this,'quiz1',true)"><span class="ql">B</span>Predice el siguiente token más probable basado en patrones estadísticos</div>
       <div class="qo" onclick="checkQ(this,'quiz1',false)"><span class="ql">C</span>Busca respuestas en una base de datos de conocimiento</div>
-      <div class="qo" onclick="checkQ(this,'quiz1',false)"><span class="ql">D</span>Ejecuta reglas logicas programadas por ingenieros</div>
+      <div class="qo" onclick="checkQ(this,'quiz1',false)"><span class="ql">D</span>Ejecuta reglas lógicas programadas por ingenieros</div>
     </div>
     <div class="qf" id="quiz1-fb"></div>
   </div>
 </section>
 
-<!-- ===== 3. LA REALIDAD: FRACASOS Y COSTOS ===== -->
+<!-- ===== 3. REALIDAD: FRACASOS ===== -->
 <section class="S" id="failures">
-  <div class="sn">02 — La Realidad de la Implementacion</div>
-  <h2>El 80% de los Proyectos de IA<br>Fracasan. Por Que?</h2>
-  <p class="sub">Las cifras son contundentes: la brecha entre la promesa y la realidad de la IA empresarial es enorme. Entender por que fracasan es el primer paso para no ser parte de la estadistica.</p>
+  <div class="sn">02 — La Realidad de la Implementación</div>
+  <h2>El 80% de los Proyectos de IA<br>Fracasan. ¿Por Qué?</h2>
+  <p class="sub">Las cifras son contundentes: la brecha entre la promesa y la realidad de la IA empresarial es enorme. Entender por qué fracasan es el primer paso para no ser parte de la estadística.</p>
 
   <div class="cg ao">
     <div class="cb"><div class="cv" data-target="80" data-suffix="%">0</div><div class="cl">Proyectos IA fallan</div><div class="cs">RAND Corporation</div></div>
-    <div class="cb"><div class="cv" data-target="95" data-suffix="%">0</div><div class="cl">Pilotos GenAI sin impacto P&L</div><div class="cs">MIT NANDA Report, 2025</div></div>
-    <div class="cb"><div class="cv" data-target="547" data-suffix="B">$0</div><div class="cl">Invertidos sin valor entregado</div><div class="cs">De $684B totales en 2025</div></div>
-    <div class="cb"><div class="cv" data-target="4.2" data-suffix="M">$0</div><div class="cl">Costo promedio proyecto abandonado</div><div class="cs">42% de empresas abandonaron ≥1 en 2025</div></div>
+    <div class="cb"><div class="cv" data-target="66" data-suffix="%">0</div><div class="cl">Logran productividad, no ingresos</div><div class="cs">Deloitte State of AI, 2026</div></div>
+    <div class="cb"><div class="cv" data-target="20" data-suffix="%">0</div><div class="cl">Tienen gobernanza madura de IA</div><div class="cs">Deloitte, 2026</div></div>
+    <div class="cb"><div class="cv" data-target="42" data-suffix="%">0</div><div class="cl">Creen que su estrategia está lista</div><div class="cs">Deloitte, 2026</div></div>
   </div>
 
   <!-- Iceberg -->
-  <h3 style="margin-top:40px;text-align:center;">El Iceberg de la Implementacion de IA</h3>
+  <h3 style="margin-top:40px;text-align:center;">El Iceberg de la Implementación de IA</h3>
   <div class="ice ao">
     <div class="ice-top">
       <h4>Lo que piden los directivos</h4>
-      <p>"Resultados en 3 meses"<br>"Transformacion digital"<br>"Automatizacion con IA"<br><em style="font-size:.68rem;color:var(--t3)">5% del esfuerzo real</em></p>
+      <p>"Resultados en 3 meses"<br>"Transformación digital"<br>"Automatización con IA"<br><em style="font-size:.68rem;color:var(--t3)">5% del esfuerzo real</em></p>
     </div>
     <div class="ice-water"></div>
     <div class="ice-btm">
       <div class="ice-btm-title">Lo que nadie quiere discutir (95% del esfuerzo)</div>
-      <div class="ice-item"><div>🗄️</div><div><h5>Gobierno del Dato</h5><p>$12.9M anuales en remediacion de calidad de datos (Gartner). Sin datos limpios no hay IA.</p></div></div>
-      <div class="ice-item"><div>🏗️</div><div><h5>Infraestructura</h5><p>Costos ocultos inflan TCO 200-400% vs. cotizacion inicial del vendor.</p></div></div>
-      <div class="ice-item"><div>⏱️</div><div><h5>Preparacion de Datos</h5><p>Consume 30-50% del costo total del proyecto. 72% de empresas subestiman este costo 2-5x.</p></div></div>
-      <div class="ice-item"><div>👥</div><div><h5>Talento</h5><p>60% citan brecha de conocimiento como barrera #1 para IA responsable (McKinsey 2026).</p></div></div>
-      <div class="ice-item"><div>🧬</div><div><h5>Cultura Organizativa</h5><p>La adopcion de IA es un problema de management, no de tecnologia. El obstaculo mas silencioso.</p></div></div>
-      <div class="ice-item"><div>⚖️</div><div><h5>Gobernanza y Etica</h5><p>62% citan gobernanza como principal impedimento. EU AI Act: multas hasta 7% del revenue global.</p></div></div>
+      <div class="ice-item"><div>🗄️</div><div><h5>Gobierno del Dato</h5><p>$12.9M anuales en remediación de calidad de datos (Gartner). Sin datos limpios no hay IA.</p></div></div>
+      <div class="ice-item"><div>🏗️</div><div><h5>Infraestructura</h5><p>Costos ocultos inflan TCO 200-400% vs. cotización inicial del vendor.</p></div></div>
+      <div class="ice-item"><div>⏱️</div><div><h5>Preparación de Datos</h5><p>Consume 30-50% del costo total del proyecto. En minería, 60-73% de datos de sensores no se usan (Skillings, 2026).</p></div></div>
+      <div class="ice-item"><div>👥</div><div><h5>Talento</h5><p>La brecha de habilidades en IA es la barrera #1 para integración (Deloitte 2026). Sólo 34% reimaginan su negocio con IA.</p></div></div>
+      <div class="ice-item"><div>🧬</div><div><h5>Cultura Organizativa</h5><p>La adopción de IA es un problema de management, no de tecnología. El obstáculo más silencioso.</p></div></div>
+      <div class="ice-item"><div>⚖️</div><div><h5>Gobernanza y Ética</h5><p>Sólo 20% tienen modelos de supervisión maduros. EU AI Act: multas hasta 7% del revenue global.</p></div></div>
     </div>
   </div>
 
-  <!-- Costos reales -->
   <h3 style="margin-top:36px;">Los Costos Reales de la IA</h3>
   <div class="g2 ao">
     <div>
-      <div class="br"><div class="bl">Preparacion de datos</div><div class="bt"><div class="bf" data-width="45" style="background:linear-gradient(90deg,var(--red),#FCA5A5)">30-50%</div></div></div>
+      <div class="br"><div class="bl">Preparación de datos</div><div class="bt"><div class="bf" data-width="45" style="background:linear-gradient(90deg,var(--red),#FCA5A5)">30-50%</div></div></div>
       <div class="br"><div class="bl">Infraestructura/Cloud</div><div class="bt"><div class="bf" data-width="25" style="background:linear-gradient(90deg,var(--orange),#FDBA74)">20-25%</div></div></div>
       <div class="br"><div class="bl">Desarrollo del modelo</div><div class="bt"><div class="bf" data-width="15" style="background:linear-gradient(90deg,var(--azure),var(--azure-light))">10-15%</div></div></div>
       <div class="br"><div class="bl">Monitoreo y mantenimiento</div><div class="bt"><div class="bf" data-width="12" style="background:linear-gradient(90deg,var(--purple),#C4B5FD)">10-15%</div></div></div>
       <div class="br"><div class="bl">Gobernanza y compliance</div><div class="bt"><div class="bf" data-width="10" style="background:linear-gradient(90deg,var(--green),#6EE7B7)">5-10%</div></div></div>
-      <p style="margin-top:10px;font-size:.72rem;color:var(--t3)">Fuente: RTS Labs, 2026 &middot; Keyhole Software, 2026</p>
+      <p style="margin-top:10px;font-size:.72rem;color:var(--t3)">Fuente: Keyhole Software, 2026</p>
     </div>
     <div class="c gb" style="padding:26px;">
-      <h3 style="color:var(--red)">Tiempos Reales de Implementacion</h3>
+      <h3 style="color:var(--red)">Tiempos Reales de Implementación</h3>
       <p style="margin-top:10px;"><strong style="color:var(--orange)">Fundamentos:</strong> 4-12 semanas</p>
       <p><strong style="color:var(--azure)">Pilotos:</strong> 3-6 meses</p>
       <p><strong style="color:var(--purple)">Escala empresarial:</strong> 12-24 meses</p>
@@ -428,14 +411,13 @@ h3{font-size:1.15rem;font-weight:700;color:var(--azure);margin-bottom:10px}
     </div>
   </div>
 
-  <!-- QUIZ 2 -->
   <div class="qc ao" id="quiz2">
-    <div class="qq">🧪 Checkpoint: Cual es el componente que mas consume presupuesto en un proyecto de IA?</div>
+    <div class="qq">🧪 Checkpoint: ¿Cuál es el componente que más consume presupuesto en un proyecto de IA?</div>
     <div class="qos">
       <div class="qo" onclick="checkQ(this,'quiz2',false)"><span class="ql">A</span>Desarrollo del modelo de machine learning</div>
       <div class="qo" onclick="checkQ(this,'quiz2',false)"><span class="ql">B</span>Licencias de software y APIs</div>
-      <div class="qo" onclick="checkQ(this,'quiz2',true)"><span class="ql">C</span>Preparacion y limpieza de datos (30-50% del costo total)</div>
-      <div class="qo" onclick="checkQ(this,'quiz2',false)"><span class="ql">D</span>Capacitacion del equipo</div>
+      <div class="qo" onclick="checkQ(this,'quiz2',true)"><span class="ql">C</span>Preparación y limpieza de datos (30-50% del costo total)</div>
+      <div class="qo" onclick="checkQ(this,'quiz2',false)"><span class="ql">D</span>Capacitación del equipo</div>
     </div>
     <div class="qf" id="quiz2-fb"></div>
   </div>
@@ -443,46 +425,44 @@ h3{font-size:1.15rem;font-weight:700;color:var(--azure);margin-bottom:10px}
 
 <!-- ===== 4. ROI ===== -->
 <section class="S" id="roi">
-  <div class="sn">03 — Retorno de Inversion</div>
-  <h2>Por Que Es Importante<br>Determinar el ROI de la IA?</h2>
-  <p class="sub">Porque sin ROI medible, la IA es solo un gasto. Estudio de Google Cloud (3,466 lideres globales, abril-junio 2025): el 88% de pioneros ya percibe ROI positivo. El secreto: metodologia, no magia.</p>
+  <div class="sn">03 — Retorno de Inversión</div>
+  <h2>¿Por Qué Es Importante<br>Determinar el ROI de la IA?</h2>
+  <p class="sub">Porque sin ROI medible, la IA es solo un gasto. Estudio de Google Cloud (3,466 líderes globales, 2025): el 88% de pioneros ya percibe ROI positivo. El secreto: metodología, no magia.</p>
 
   <div class="cg ao">
-    <div class="cb"><div class="cv" data-target="88" data-suffix="%">0</div><div class="cl">Pioneros con ROI positivo</div><div class="cs">Google Cloud & NRG, 2025</div></div>
-    <div class="cb"><div class="cv" data-target="207" data-suffix="%">0</div><div class="cl">ROI en 3 anos</div><div class="cs">Forrester &middot; Payback &lt; 6 meses</div></div>
+    <div class="cb"><div class="cv" data-target="88" data-suffix="%">0</div><div class="cl">Pioneros con ROI positivo</div><div class="cs">Google Cloud &amp; NRG, 2025</div></div>
+    <div class="cb"><div class="cv" data-target="207" data-suffix="%">0</div><div class="cl">ROI en 3 años (caso Google AI)</div><div class="cs">Forrester TEI Study</div></div>
     <div class="cb"><div class="cv" data-target="3.7" data-suffix="x">0</div><div class="cl">Retorno por $1 invertido en GenAI</div><div class="cs">NVIDIA State of AI, 2025</div></div>
-    <div class="cb"><div class="cv" data-target="73" data-suffix="%">0</div><div class="cl">Fallan en lograr ROI proyectado</div><div class="cs">AI Governance Today, 2026</div></div>
+    <div class="cb"><div class="cv" data-target="40" data-suffix="%">0</div><div class="cl">Logran reducción de costos</div><div class="cs">Deloitte State of AI, 2026</div></div>
   </div>
 
-  <!-- Discovery Graph -->
   <h3 style="margin-top:40px;">Las 5 Fases del Descubrimiento del ROI</h3>
   <p style="font-size:.82rem;color:var(--t3);margin-bottom:10px;">Haz clic en cada fase para ver las preguntas orientadoras</p>
   <div class="discovery ao">
-    <div class="disc-phase active" onclick="showDisc(0)"><div class="disc-num">1</div><div class="disc-name">Diagnostico</div></div>
-    <div class="disc-phase" onclick="showDisc(1)"><div class="disc-num">2</div><div class="disc-name">Identificacion</div></div>
-    <div class="disc-phase" onclick="showDisc(2)"><div class="disc-num">3</div><div class="disc-name">Medicion</div></div>
-    <div class="disc-phase" onclick="showDisc(3)"><div class="disc-num">4</div><div class="disc-name">Validacion</div></div>
+    <div class="disc-phase active" onclick="showDisc(0)"><div class="disc-num">1</div><div class="disc-name">Diagnóstico</div></div>
+    <div class="disc-phase" onclick="showDisc(1)"><div class="disc-num">2</div><div class="disc-name">Identificación</div></div>
+    <div class="disc-phase" onclick="showDisc(2)"><div class="disc-num">3</div><div class="disc-name">Medición</div></div>
+    <div class="disc-phase" onclick="showDisc(3)"><div class="disc-num">4</div><div class="disc-name">Validación</div></div>
     <div class="disc-phase" onclick="showDisc(4)"><div class="disc-num">5</div><div class="disc-name">Escalamiento</div></div>
   </div>
-  <div class="disc-detail active" id="disc-0"><h3>Fase 1: Diagnostico — Donde Estamos?</h3><p style="color:var(--t2);line-height:1.7;margin:8px 0">Antes de invertir, entender la realidad actual de datos, procesos y madurez organizacional.</p><div class="disc-questions"><div class="disc-q">Cual es nuestro nivel real de madurez digital? (No el aspiracional)</div><div class="disc-q">Tenemos datos gobernados, accesibles y de calidad?</div><div class="disc-q">Cuales son los procesos mas costosos / con mas ineficiencias?</div><div class="disc-q">Donde esta el downtime mas caro?</div></div></div>
-  <div class="disc-detail" id="disc-1"><h3>Fase 2: Identificacion — Que Problema Resolvemos?</h3><p style="color:var(--t2);line-height:1.7;margin:8px 0">No partir de la tecnologia, sino del problema de negocio (Jobs to be Done).</p><div class="disc-questions"><div class="disc-q">Cuales son los 2-3 casos de uso con mayor impacto y menor barrera?</div><div class="disc-q">El caso de uso es realmente un problema de IA o de proceso?</div><div class="disc-q">Existe un baseline cuantificable contra el cual medir mejora?</div><div class="disc-q">Quien es el champion interno de este caso de uso?</div></div></div>
-  <div class="disc-detail" id="disc-2"><h3>Fase 3: Medicion — Como Cuantificamos?</h3><p style="color:var(--t2);line-height:1.7;margin:8px 0">Definir metricas claras ANTES de implementar, no despues.</p><div class="disc-questions"><div class="disc-q">Cual es el TCO real? (Incluir datos, infra, talento, gobernanza — no solo la licencia)</div><div class="disc-q">Cual es el horizonte de retorno? (Pilots: 3-6 meses, Escala: 12-24 meses)</div><div class="disc-q">Reduccion de costos? Aumento de productividad? Nuevos ingresos?</div><div class="disc-q">Factores intangibles? (Satisfaccion, velocidad, seguridad)</div></div></div>
-  <div class="disc-detail" id="disc-3"><h3>Fase 4: Validacion — Funciona en el Mundo Real?</h3><p style="color:var(--t2);line-height:1.7;margin:8px 0">Piloto controlado antes de escalar. Medir contra el baseline.</p><div class="disc-questions"><div class="disc-q">El piloto se ejecuta con datos reales de produccion?</div><div class="disc-q">Hay A/B testing o grupo de control?</div><div class="disc-q">El equipo operacional participo en el diseno?</div><div class="disc-q">El modelo funciona con la calidad de datos real (no la ideal)?</div></div></div>
-  <div class="disc-detail" id="disc-4"><h3>Fase 5: Escalamiento — Como Pasamos de Piloto a Produccion?</h3><p style="color:var(--t2);line-height:1.7;margin:8px 0">Solo el 5% lo logra con impacto en P&L (MIT). La clave: infraestructura + gobernanza + cultura.</p><div class="disc-questions"><div class="disc-q">Tenemos la infraestructura para escalar (cloud, edge, MLOps)?</div><div class="disc-q">Hay monitoreo de model drift en produccion?</div><div class="disc-q">La organizacion sabe que el modelo existe y como usarlo?</div><div class="disc-q">Hay gobernanza para decidir cuando retirar un modelo?</div></div></div>
+  <div class="disc-detail active" id="disc-0"><h3>Fase 1: Diagnóstico — ¿Dónde Estamos?</h3><p style="color:var(--t2);line-height:1.7;margin:8px 0">Antes de invertir, entender la realidad actual de datos, procesos y madurez organizacional.</p><div class="disc-questions"><div class="disc-q">¿Cuál es nuestro nivel real de madurez digital? (No el aspiracional)</div><div class="disc-q">¿Tenemos datos gobernados, accesibles y de calidad?</div><div class="disc-q">¿Cuáles son los procesos más costosos / con más ineficiencias?</div><div class="disc-q">¿Dónde está el downtime más caro?</div></div></div>
+  <div class="disc-detail" id="disc-1"><h3>Fase 2: Identificación — ¿Qué Problema Resolvemos?</h3><p style="color:var(--t2);line-height:1.7;margin:8px 0">No partir de la tecnología, sino del problema de negocio (Jobs to be Done).</p><div class="disc-questions"><div class="disc-q">¿Cuáles son los 2-3 casos de uso con mayor impacto y menor barrera?</div><div class="disc-q">¿El caso de uso es realmente un problema de IA o de proceso?</div><div class="disc-q">¿Existe un baseline cuantificable contra el cual medir mejora?</div><div class="disc-q">¿Quién es el champion interno de este caso de uso?</div></div></div>
+  <div class="disc-detail" id="disc-2"><h3>Fase 3: Medición — ¿Cómo Cuantificamos?</h3><p style="color:var(--t2);line-height:1.7;margin:8px 0">Definir métricas claras ANTES de implementar, no después.</p><div class="disc-questions"><div class="disc-q">¿Cuál es el TCO real? (Incluir datos, infra, talento, gobernanza — no sólo la licencia)</div><div class="disc-q">¿Cuál es el horizonte de retorno? (Pilotos: 3-6 meses, Escala: 12-24 meses)</div><div class="disc-q">¿Reducción de costos? ¿Aumento de productividad? ¿Nuevos ingresos?</div><div class="disc-q">¿Factores intangibles? (Satisfacción, velocidad, seguridad)</div></div></div>
+  <div class="disc-detail" id="disc-3"><h3>Fase 4: Validación — ¿Funciona en el Mundo Real?</h3><p style="color:var(--t2);line-height:1.7;margin:8px 0">Piloto controlado antes de escalar. Medir contra el baseline.</p><div class="disc-questions"><div class="disc-q">¿El piloto se ejecuta con datos reales de producción?</div><div class="disc-q">¿Hay A/B testing o grupo de control?</div><div class="disc-q">¿El equipo operacional participó en el diseño?</div><div class="disc-q">¿El modelo funciona con la calidad de datos real (no la ideal)?</div></div></div>
+  <div class="disc-detail" id="disc-4"><h3>Fase 5: Escalamiento — ¿Cómo Pasamos de Piloto a Producción?</h3><p style="color:var(--t2);line-height:1.7;margin:8px 0">La clave: infraestructura + gobernanza + cultura.</p><div class="disc-questions"><div class="disc-q">¿Tenemos la infraestructura para escalar (cloud, edge, MLOps)?</div><div class="disc-q">¿Hay monitoreo de model drift en producción?</div><div class="disc-q">¿La organización sabe que el modelo existe y cómo usarlo?</div><div class="disc-q">¿Hay gobernanza para decidir cuándo retirar un modelo?</div></div></div>
 
-  <!-- ROI Calculator -->
   <div class="calc ao">
     <h3>Simulador de Impacto ROI</h3>
-    <p style="color:var(--t3);font-size:.78rem;margin-bottom:16px">Ajusta los parametros para estimar potencial. Mueve los sliders.</p>
+    <p style="color:var(--t3);font-size:.78rem;margin-bottom:16px">Ajusta los parámetros para estimar potencial. Mueve los sliders.</p>
     <div class="calc-in">
-      <div class="calc-g"><label>Produccion Anual (K onzas)</label><input type="range" min="50" max="300" value="200" id="cP" oninput="uCalc()"><div class="calc-d" id="dP">200K oz</div></div>
+      <div class="calc-g"><label>Producción Anual (K onzas)</label><input type="range" min="50" max="300" value="200" id="cP" oninput="uCalc()"><div class="calc-d" id="dP">200K oz</div></div>
       <div class="calc-g"><label>Precio del Oro (USD/oz)</label><input type="range" min="1800" max="3500" value="2400" step="50" id="cG" oninput="uCalc()"><div class="calc-d" id="dG">$2,400</div></div>
-      <div class="calc-g"><label>Reduccion Downtime (%)</label><input type="range" min="5" max="35" value="20" id="cD" oninput="uCalc()"><div class="calc-d" id="dD">20%</div></div>
-      <div class="calc-g"><label>Inversion en IA (USD M)</label><input type="range" min="1" max="20" value="5" id="cI" oninput="uCalc()"><div class="calc-d" id="dI">$5M</div></div>
+      <div class="calc-g"><label>Reducción Downtime (%)</label><input type="range" min="5" max="35" value="20" id="cD" oninput="uCalc()"><div class="calc-d" id="dD">20%</div></div>
+      <div class="calc-g"><label>Inversión en IA (USD M)</label><input type="range" min="1" max="20" value="5" id="cI" oninput="uCalc()"><div class="calc-d" id="dI">$5M</div></div>
     </div>
     <div class="calc-r">
       <div class="calc-rv"><div class="calc-rvv" id="rS" style="color:var(--green)">$0</div><div class="calc-rvl">Ahorro Anual</div></div>
-      <div class="calc-rv"><div class="calc-rvv" id="rR" style="color:var(--azure)">0%</div><div class="calc-rvl">ROI Ano 1</div></div>
+      <div class="calc-rv"><div class="calc-rvv" id="rR" style="color:var(--azure)">0%</div><div class="calc-rvl">ROI Año 1</div></div>
       <div class="calc-rv"><div class="calc-rvv" id="rP" style="color:var(--orange)">0</div><div class="calc-rvl">Payback (meses)</div></div>
     </div>
   </div>
@@ -492,243 +472,334 @@ h3{font-size:1.15rem;font-weight:700;color:var(--azure);margin-bottom:10px}
 <section class="S" id="governance">
   <div class="sn">04 — Gobernanza y Datos</div>
   <h2>Sin Gobernanza de Datos,<br>No Hay IA Posible</h2>
-  <p class="sub">Gartner predice que para 2026, las organizaciones abandonaran el 60% de los proyectos de IA por insuficiente calidad de datos. El dato es el activo mas valioso — y el mas descuidado.</p>
+  <p class="sub">Gartner predice que al menos el 30% de los proyectos de IA generativa serán abandonados tras la prueba de concepto por insuficiente calidad de datos. El dato es el activo más valioso — y el más descuidado.</p>
 
   <div class="cg ao">
-    <div class="cb"><div class="cv" data-target="60" data-suffix="%">0</div><div class="cl">Proyectos IA abandonados por datos</div><div class="cs">Gartner, 2026</div></div>
-    <div class="cb"><div class="cv" data-target="40" data-suffix="%">0</div><div class="cl">Mayor ROI con gobernanza madura</div><div class="cs">Integrate.io, 2026</div></div>
-    <div class="cb"><div class="cv" data-target="23" data-suffix="x">0</div><div class="cl">Mas probable adquirir clientes</div><div class="cs">Orgs data-driven vs. no</div></div>
+    <div class="cb"><div class="cv" data-target="30" data-suffix="%">0</div><div class="cl">Proyectos GenAI abandonados post-PoC</div><div class="cs">Gartner, 2025</div></div>
+    <div class="cb"><div class="cv" data-target="73" data-suffix="%">0</div><div class="cl">Datos de sensores mineros sin usar</div><div class="cs">Skillings.net, 2026</div></div>
+    <div class="cb"><div class="cv" data-target="23" data-suffix="x">0</div><div class="cl">Más probable adquirir clientes</div><div class="cs">Orgs data-driven (McKinsey)</div></div>
     <div class="cb"><div class="cv" data-target="5" data-suffix="%">0</div><div class="cl">Alcanzan madurez de datos optimizada</div><div class="cs">Menos del 5% global</div></div>
   </div>
 
-  <!-- 4 Pillars -->
   <h3 style="margin-top:36px;">Los 4 Pilares del Data-Driven</h3>
   <div class="g4 ao">
-    <div class="c" style="border-top:3px solid var(--azure)"><div class="ci" style="background:rgba(0,169,224,.1)">☁️</div><h3 style="font-size:1rem;">Nube</h3><p>Arquitectura cloud-edge para mineria: procesamiento local con conectividad intermitente + Data Lake centralizado. Azure IoT Edge, AWS Greengrass.</p></div>
-    <div class="c" style="border-top:3px solid var(--green)"><div class="ci" style="background:rgba(52,211,153,.1)">📊</div><h3 style="font-size:1rem;">Calidad del Dato</h3><p>$12.9M anuales en remediacion. Sin datos limpios, consistentes y trazables, los modelos de IA producen basura. Data lineage automatizado.</p></div>
-    <div class="c" style="border-top:3px solid var(--purple)"><div class="ci" style="background:rgba(167,139,250,.1)">⚖️</div><h3 style="font-size:1rem;">Regulacion</h3><p>EU AI Act: multas hasta 7% revenue global. ISO/IEC 42001:2023. NIST AI RMF. 50% de gobiernos regulando IA para 2026 (Gartner).</p></div>
-    <div class="c" style="border-top:3px solid var(--orange)"><div class="ci" style="background:rgba(251,146,60,.1)">🧬</div><h3 style="font-size:1rem;">Cultura</h3><p>Data-driven no es una herramienta, es una forma de pensar. Orgs data-driven: 23x mas adquisicion, 6x mas retencion, 19x mas rentables.</p></div>
+    <div class="c" style="border-top:3px solid var(--azure)"><div class="ci" style="background:rgba(0,169,224,.1)">☁️</div><h3 style="font-size:1rem;">Nube</h3><p>Arquitectura cloud-edge para minería: procesamiento local con conectividad intermitente + Data Lake centralizado. Azure IoT Edge, AWS Greengrass.</p></div>
+    <div class="c" style="border-top:3px solid var(--green)"><div class="ci" style="background:rgba(52,211,153,.1)">📊</div><h3 style="font-size:1rem;">Calidad del Dato</h3><p>$12.9M anuales en remediación. Sin datos limpios, consistentes y trazables, los modelos de IA producen basura. Data lineage automatizado.</p></div>
+    <div class="c" style="border-top:3px solid var(--purple)"><div class="ci" style="background:rgba(167,139,250,.1)">⚖️</div><h3 style="font-size:1rem;">Regulación</h3><p>EU AI Act: multas hasta 7% revenue global. ISO/IEC 42001:2023. NIST AI RMF. 50% de gobiernos regulando IA para 2026 (Gartner).</p></div>
+    <div class="c" style="border-top:3px solid var(--orange)"><div class="ci" style="background:rgba(251,146,60,.1)">🧬</div><h3 style="font-size:1rem;">Cultura</h3><p>Data-driven no es una herramienta, es una forma de pensar. Orgs data-driven: 23x más adquisición, 6x más retención, 19x más rentables.</p></div>
   </div>
 
-  <!-- Maturity Path -->
   <h3 style="margin-top:36px;">El Camino Hacia la Madurez de Datos</h3>
-  <p style="font-size:.82rem;color:var(--t3);margin-bottom:12px">12-18 meses al nivel funcional. 18-24 meses adicionales al nivel optimizado. Menos del 5% lo logra.</p>
   <div class="tbl ao">
-    <table class="tbl" style="width:100%"><thead><tr><th>Nivel</th><th>Descripcion</th><th>Caracteristica</th><th>% Organizaciones</th></tr></thead><tbody>
+    <table class="tbl" style="width:100%"><thead><tr><th>Nivel</th><th>Descripción</th><th>Característica</th><th>% Organizaciones</th></tr></thead><tbody>
     <tr><td><strong style="color:var(--red)">1. Reactivo</strong></td><td>Datos en silos, sin gobierno</td><td>Excel, reportes manuales</td><td>~30%</td></tr>
-    <tr><td><strong style="color:var(--orange)">2. Definido</strong></td><td>Politicas basicas, algo de integracion</td><td>BI basico, primeros dashboards</td><td>~35%</td></tr>
-    <tr><td><strong style="color:var(--azure)">3. Funcional</strong></td><td>Data Lake, calidad controlada</td><td>Analytics avanzado, ML en produccion</td><td>~25%</td></tr>
-    <tr><td><strong style="color:var(--green)">4. Optimizado</strong></td><td>Cultura data-driven, IA sistemica</td><td>Agentes IA, decisiones automatizadas</td><td>&lt;5%</td></tr>
+    <tr><td><strong style="color:var(--orange)">2. Definido</strong></td><td>Políticas básicas, algo de integración</td><td>BI básico, primeros dashboards</td><td>~35%</td></tr>
+    <tr><td><strong style="color:var(--azure)">3. Funcional</strong></td><td>Data Lake, calidad controlada</td><td>Analytics avanzado, ML en producción</td><td>~25%</td></tr>
+    <tr><td><strong style="color:var(--green)">4. Optimizado</strong></td><td>Cultura data-driven, IA sistémica</td><td>Agentes IA, decisiones automatizadas</td><td>&lt;5%</td></tr>
     </tbody></table>
   </div>
 </section>
 
-<!-- ===== 6. QUE GENERA VALOR ===== -->
+<!-- ===== 6. QUÉ GENERA VALOR ===== -->
 <section class="S" id="value">
   <div class="sn">05 — Jobs to be Done</div>
-  <h2>Que Genera Valor de Verdad?<br>Agentes? LLMs? Automatizacion?</h2>
-  <p class="sub">El framework Jobs to be Done (JTBD) nos recuerda: la tecnologia solo genera valor cuando resuelve un problema real de negocio. No empieces por la IA — empieza por el trabajo que necesitas hacer.</p>
+  <h2>¿Qué Genera Valor de Verdad?<br>¿Agentes? ¿LLMs? ¿Automatización?</h2>
+  <p class="sub">El framework Jobs to be Done (JTBD) nos recuerda: la tecnología sólo genera valor cuando resuelve un problema real de negocio. No empieces por la IA — empieza por el trabajo que necesitas hacer.</p>
 
   <div class="c gb ao" style="padding:28px;margin-bottom:28px;">
-    <h3 style="color:var(--orange)">El Error Mas Comun</h3>
-    <p style="font-size:1rem;line-height:1.7">El enfoque <strong>technology-first</strong> — buscar donde aplicar IA — produce resultados impresionantes tecnicamente que no resuenan con las necesidades del negocio. El enfoque correcto es <strong>problem-first</strong>: cual es el trabajo que el negocio necesita hacer? La IA es la mejor herramienta para ese trabajo?</p>
+    <h3 style="color:var(--orange)">El Error Más Común</h3>
+    <p style="font-size:1rem;line-height:1.7">El enfoque <strong>technology-first</strong> — buscar dónde aplicar IA — produce resultados impresionantes técnicamente que no resuenan con las necesidades del negocio. El enfoque correcto es <strong>problem-first</strong>: ¿cuál es el trabajo que el negocio necesita hacer? ¿La IA es la mejor herramienta para ese trabajo?</p>
     <p style="font-size:.72rem;color:var(--t3);margin-top:8px;">Fuente: AKF Partners — Maximizing AI/ML Impact: Jobs to be Done</p>
   </div>
 
-  <h3>Enfoque Erroneo vs. Enfoque Correcto</h3>
+  <h3>Enfoque Erróneo vs. Enfoque Correcto</h3>
   <div class="jtbd-grid ao">
     <div class="jtbd-card wrong">
       <div class="jtbd-label" style="background:rgba(248,113,113,.1);color:var(--red)">Technology-First</div>
-      <h3 style="color:var(--red);font-size:1rem;">Tenemos IA. Donde la aplicamos?</h3>
-      <p style="color:var(--t2);margin-top:8px;font-size:.85rem;line-height:1.6">→ Feature-centric: desarrollar capacidades IA sin entender el problema<br>→ Soluciones sofisticadas que nadie usa<br>→ Pilotos que nunca escalan (95% segun MIT)<br>→ Inversion sin ROI medible</p>
+      <h3 style="color:var(--red);font-size:1rem;">Tenemos IA. ¿Dónde la aplicamos?</h3>
+      <p style="color:var(--t2);margin-top:8px;font-size:.85rem;line-height:1.6">→ Feature-centric: desarrollar capacidades IA sin entender el problema<br>→ Soluciones sofisticadas que nadie usa<br>→ Pilotos que nunca escalan<br>→ Inversión sin ROI medible</p>
     </div>
     <div class="jtbd-card right">
       <div class="jtbd-label" style="background:rgba(52,211,153,.1);color:var(--green)">Problem-First (JTBD)</div>
-      <h3 style="color:var(--green);font-size:1rem;">Cual es el trabajo que necesitamos hacer?</h3>
-      <p style="color:var(--t2);margin-top:8px;font-size:.85rem;line-height:1.6">→ Entender el problema de negocio primero<br>→ Evaluar si la IA es la mejor herramienta<br>→ Medir impacto contra un baseline real<br>→ Adopcion natural porque resuelve un dolor real</p>
+      <h3 style="color:var(--green);font-size:1rem;">¿Cuál es el trabajo que necesitamos hacer?</h3>
+      <p style="color:var(--t2);margin-top:8px;font-size:.85rem;line-height:1.6">→ Entender el problema de negocio primero<br>→ Evaluar si la IA es la mejor herramienta<br>→ Medir impacto contra un baseline real<br>→ Adopción natural porque resuelve un dolor real</p>
     </div>
   </div>
 
-  <!-- Value Spectrum -->
-  <h3 style="margin-top:36px;">El Espectro del Valor: De Chatbot a Autonomia</h3>
-  <div class="th ao"><button class="tb active" onclick="switchTab(event,'v-1')">Nivel 1: Tareas</button><button class="tb" onclick="switchTab(event,'v-2')">Nivel 2: Agentes</button><button class="tb" onclick="switchTab(event,'v-3')">Nivel 3: Multi-Agente</button><button class="tb" onclick="switchTab(event,'v-4')">Nivel 4: Autonomia</button></div>
-  <div class="tc active" id="v-1"><div class="g2"><div><h3>Tareas Sencillas (Nivel 1)</h3><p style="color:var(--t2);line-height:1.7">Chatbots, busqueda semantica, generacion de contenido, resumenes. <strong>Valor real pero limitado.</strong> No requiere integracion profunda. Quick wins para demostrar valor.</p></div><div class="c" style="padding:20px"><h3>Ejemplos en Mineria</h3><p>&#x2022; Consulta de documentacion tecnica<br>&#x2022; Generacion de reportes rutinarios<br>&#x2022; Asistente para normativas HSE<br>&#x2022; Traduccion de documentos operacionales</p></div></div></div>
-  <div class="tc" id="v-2"><div class="g2"><div><h3>Agentes IA Especializados (Nivel 2)</h3><p style="color:var(--t2);line-height:1.7">LLMs + herramientas + APIs. Razonan, planifican, ejecutan acciones. Pueden interactuar con sistemas empresariales via MCP. <strong>Aqui es donde el valor real empieza.</strong></p></div><div class="c" style="padding:20px"><h3>Ejemplos en Mineria</h3><p>&#x2022; Agente de mantenimiento predictivo<br>&#x2022; Agente de reportes operacionales<br>&#x2022; Agente de supply chain<br>&#x2022; Agente HSE (seguridad)</p></div></div></div>
-  <div class="tc" id="v-3"><div class="g2"><div><h3>Flujos Multi-Agente (Nivel 3)</h3><p style="color:var(--t2);line-height:1.7">Multiples agentes coordinados, cada uno especializado. Un orquestador delega a sub-agentes. <strong>Graduated autonomy: los agentes "ganan" autonomia con performance probado.</strong></p></div><div class="c" style="padding:20px"><h3>Ejemplo</h3><p>El agente de mantenimiento detecta anomalia → llama al agente de supply chain → que verifica inventario → que genera orden de compra → que notifica al agente de operaciones para programar parada.</p></div></div></div>
-  <div class="tc" id="v-4"><div class="g2"><div><h3>Autonomia Asistida (Nivel 4)</h3><p style="color:var(--t2);line-height:1.7">La IA es co-piloto estrategico. Operaciones autonomas con supervision humana. <strong>Requiere madurez nivel 4-5 en datos, gobernanza y cultura.</strong> Menos del 5% de organizaciones llegan aqui.</p></div><div class="c" style="padding:20px"><h3>El Principio Clave</h3><p style="font-size:.95rem;font-weight:600;color:var(--azure)">"Humanos + Maquinas"</p><p>Las implementaciones mas exitosas no reemplazan humanos — crean superagentes que combinan juicio humano con velocidad de maquina. (Google Cloud ROI Report, 2025)</p></div></div></div>
+  <h3 style="margin-top:36px;">El Espectro del Valor: De Chatbot a Autonomía</h3>
+  <div class="th ao"><button class="tb active" onclick="switchTab(event,'v-1')">Nivel 1: Tareas</button><button class="tb" onclick="switchTab(event,'v-2')">Nivel 2: Agentes</button><button class="tb" onclick="switchTab(event,'v-3')">Nivel 3: Multi-Agente</button><button class="tb" onclick="switchTab(event,'v-4')">Nivel 4: Autonomía</button></div>
+  <div class="tc active" id="v-1"><div class="g2"><div><h3>Tareas Sencillas (Nivel 1)</h3><p style="color:var(--t2);line-height:1.7">Chatbots, búsqueda semántica, generación de contenido, resúmenes. <strong>Valor real pero limitado.</strong> No requiere integración profunda. Quick wins para demostrar valor.</p></div><div class="c" style="padding:20px"><h3>Ejemplos en Minería</h3><p>&#x2022; Consulta de documentación técnica<br>&#x2022; Generación de reportes rutinarios<br>&#x2022; Asistente para normativas HSE<br>&#x2022; Traducción de documentos operacionales</p></div></div></div>
+  <div class="tc" id="v-2"><div class="g2"><div><h3>Agentes IA Especializados (Nivel 2)</h3><p style="color:var(--t2);line-height:1.7">LLMs + herramientas + APIs. Razonan, planifican, ejecutan acciones. Pueden interactuar con sistemas empresariales vía MCP. <strong>Aquí es donde el valor real empieza.</strong></p></div><div class="c" style="padding:20px"><h3>Ejemplos en Minería</h3><p>&#x2022; Agente de mantenimiento predictivo<br>&#x2022; Agente de reportes operacionales<br>&#x2022; Agente de supply chain<br>&#x2022; Agente HSE (seguridad)</p></div></div></div>
+  <div class="tc" id="v-3"><div class="g2"><div><h3>Flujos Multi-Agente (Nivel 3)</h3><p style="color:var(--t2);line-height:1.7">Múltiples agentes coordinados, cada uno especializado. Un orquestador delega a sub-agentes. <strong>Graduated autonomy: los agentes "ganan" autonomía con performance probado.</strong></p></div><div class="c" style="padding:20px"><h3>Ejemplo en Minería</h3><p>El agente de mantenimiento detecta anomalía → llama al agente de supply chain → que verifica inventario → que genera orden de compra → que notifica al agente de operaciones para programar parada.</p></div></div></div>
+  <div class="tc" id="v-4"><div class="g2"><div><h3>Autonomía Asistida (Nivel 4)</h3><p style="color:var(--t2);line-height:1.7">La IA es co-piloto estratégico. Operaciones autónomas con supervisión humana. <strong>Requiere madurez nivel 4+ en datos, gobernanza y cultura.</strong> Menos del 5% de organizaciones llegan aquí.</p></div><div class="c" style="padding:20px"><h3>El Principio Clave</h3><p style="font-size:.95rem;font-weight:600;color:var(--azure)">"Humanos + Máquinas"</p><p>Las implementaciones más exitosas no reemplazan humanos — crean superagentes que combinan juicio humano con velocidad de máquina. (Google Cloud ROI Report, 2025)</p></div></div></div>
 </section>
 
-<!-- ===== 7. CASOS REALES EN MINERIA ===== -->
+<!-- ===== 7. CASOS REALES ===== -->
 <section class="S" id="cases">
   <div class="sn">06 — Casos Reales</div>
-  <h2>IA en Mineria: Resultados<br>Medibles, No Promesas</h2>
-  <p class="sub">Casos documentados de mineras Tier-1 que ya estan generando valor con IA. Datos verificables, no marketing de vendors.</p>
+  <h2>IA en Minería: Resultados<br>Medibles, No Promesas</h2>
+  <p class="sub">Casos documentados de mineras Tier-1 que ya están generando valor con IA. Datos de reportes anuales, earnings calls y partnerships verificados.</p>
 
   <div class="case-grid ao">
     <div class="case-card">
       <div class="case-header">
         <div class="case-company">Rio Tinto</div>
-        <div class="case-title">Camiones Autonomos en Pilbara</div>
+        <div class="case-title">Camiones Autónomos en Pilbara</div>
       </div>
       <div class="case-body">
-        <p>Flota de +200 camiones autonomos Komatsu en minas de hierro de Pilbara, Australia. Sistema AutoHaul para trenes autonomos (1,700 km de via).</p>
+        <p>Flota de camiones autónomos Komatsu en 5 minas de hierro de Pilbara, Australia. Sistema AutoHaul para trenes autónomos (1,700 km de vía).</p>
         <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--green)">+15%</div><div class="case-metric-label">Productividad</div></div>
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--azure)">+13%</div><div class="case-metric-label">Utilizacion de equipos</div></div>
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--orange)">-40%</div><div class="case-metric-label">Incidentes seguridad</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--green)">-15%</div><div class="case-metric-label">Costos operativos</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--azure)">+700h</div><div class="case-metric-label">Horas/año por camión</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--orange)">0</div><div class="case-metric-label">Incidentes por fatiga</div></div>
         </div>
       </div>
-      <div class="case-source">Fuente: Rio Tinto Annual Report 2024-2025 &middot; Mine Automation</div>
+      <div class="case-source">Fuente: Rio Tinto Annual Report &middot; Komatsu Partnership</div>
     </div>
 
     <div class="case-card">
       <div class="case-header">
         <div class="case-company">Freeport-McMoRan</div>
-        <div class="case-title">Optimizacion Molinos con ML</div>
+        <div class="case-title">Optimización Molinos con ML</div>
       </div>
       <div class="case-body">
-        <p>Machine learning para optimizar la operacion de molinos de cobre en Bagdad (Arizona). Modelos predictivos para maximizar throughput y recuperacion.</p>
+        <p>Machine learning para optimizar flotación de cobre en Bagdad (Arizona). Modelos predictivos para maximizar throughput y recuperación.</p>
         <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--green)">+10%</div><div class="case-metric-label">Recuperacion Cu</div></div>
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--azure)">$150M</div><div class="case-metric-label">Valor adicional/ano</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--green)">+1-3%</div><div class="case-metric-label">Recuperación Cu</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--azure)">~$150M</div><div class="case-metric-label">Valor adicional/año</div></div>
           <div class="case-metric"><div class="case-metric-val" style="color:var(--orange)">3 meses</div><div class="case-metric-label">Payback</div></div>
         </div>
       </div>
-      <div class="case-source">Fuente: BCG X Case Study, 2024 &middot; Freeport Investor Day 2024</div>
+      <div class="case-source">Fuente: BCG X Case Study &middot; Freeport Investor Day 2024</div>
     </div>
 
     <div class="case-card">
       <div class="case-header">
         <div class="case-company">BHP</div>
-        <div class="case-title">Perforacion Autonoma + Predictiva</div>
+        <div class="case-title">Mantenimiento Predictivo con Azure ML</div>
       </div>
       <div class="case-body">
-        <p>Perforadoras autonomas en Jimblebar (Pilbara) y mantenimiento predictivo con sensores IoT para anticipar fallas en equipos criticos.</p>
+        <p>Sensores IoT + Azure ML para predecir fallas en molinos SAG y camiones. Escondida y Olympic Dam como sitios principales.</p>
         <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--green)">-30%</div><div class="case-metric-label">Downtime no planificado</div></div>
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--azure)">+20%</div><div class="case-metric-label">Precision perforacion</div></div>
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--orange)">$300M</div><div class="case-metric-label">Ahorro programa IA</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--green)">-20%</div><div class="case-metric-label">Downtime no planificado</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--azure)">$70M+</div><div class="case-metric-label">Ahorro anual</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--orange)">550+</div><div class="case-metric-label">Modelos IA (Tata Steel)</div></div>
         </div>
       </div>
-      <div class="case-source">Fuente: BHP Operational Review 2025 &middot; S&P Global Mining AI</div>
+      <div class="case-source">Fuente: BHP Technology Alliances &middot; Microsoft Partnership</div>
     </div>
 
     <div class="case-card">
       <div class="case-header">
         <div class="case-company">Codelco</div>
-        <div class="case-title">Digital Twin Mina Chuquicamata</div>
+        <div class="case-title">LHD Autónomo — El Teniente</div>
       </div>
       <div class="case-body">
-        <p>Gemelo digital de la mina subterranea Chuquicamata, integrando sensores, ventilacion y logistica. Optimizacion de extraccion con modelos de IA.</p>
+        <p>Cargadores autónomos (LHD) y perforación tele-remota en minería subterránea de block caving. Partnership con Sandvik.</p>
         <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--green)">-25%</div><div class="case-metric-label">Consumo energia</div></div>
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--azure)">+8%</div><div class="case-metric-label">Throughput</div></div>
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--orange)">$200M</div><div class="case-metric-label">Inversion digital</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--green)">+30%</div><div class="case-metric-label">Utilización equipos</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--azure)">-50%</div><div class="case-metric-label">Exposición personal a riesgo</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--orange)">24/7</div><div class="case-metric-label">Operación continua</div></div>
         </div>
       </div>
-      <div class="case-source">Fuente: Codelco Digital Strategy 2025 &middot; Mining Technology</div>
+      <div class="case-source">Fuente: Codelco Sustainability Report &middot; Sandvik Automation</div>
     </div>
 
     <div class="case-card">
       <div class="case-header">
         <div class="case-company">Newmont</div>
-        <div class="case-title">IA para Seguridad Minera (HSE)</div>
+        <div class="case-title">Seguridad con Visión por Computadora</div>
       </div>
       <div class="case-body">
-        <p>Vision por computadora para detectar condiciones inseguras en tiempo real. Wearables con IA para fatiga de operadores. Geolocalizacion predictiva.</p>
+        <p>Cámaras IA para zonas de exclusión y detección de fatiga en Boddington (Australia). Alertas en tiempo real.</p>
         <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--green)">-60%</div><div class="case-metric-label">Incidentes criticos</div></div>
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--azure)">95%</div><div class="case-metric-label">Deteccion PPE</div></div>
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--orange)">&lt;2s</div><div class="case-metric-label">Tiempo alerta</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--green)">-40%</div><div class="case-metric-label">Incidentes de seguridad</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--azure)">&lt;2s</div><div class="case-metric-label">Tiempo de alerta</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--orange)">24/7</div><div class="case-metric-label">Monitoreo continuo</div></div>
         </div>
       </div>
-      <div class="case-source">Fuente: Newmont Safety Report 2025 &middot; Global Mining Review</div>
+      <div class="case-source">Fuente: Newmont Sustainability Report &middot; Caterpillar MineStar</div>
     </div>
 
     <div class="case-card">
       <div class="case-header">
         <div class="case-company">Vale</div>
-        <div class="case-title">Exploracion con IA Geologica</div>
+        <div class="case-title">Monitoreo IA de Represas</div>
       </div>
       <div class="case-body">
-        <p>Machine learning para analisis de datos geologicos e identificacion de nuevos depositos de niquel. Reduccion drastica de perforaciones exploratorias fallidas.</p>
+        <p>Post-Brumadinho: IA + radar + satélite InSAR + sensores en 130+ estructuras. Detección temprana automatizada.</p>
         <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--green)">-50%</div><div class="case-metric-label">Perforaciones fallidas</div></div>
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--azure)">3x</div><div class="case-metric-label">Velocidad analisis</div></div>
-          <div class="case-metric"><div class="case-metric-val" style="color:var(--orange)">+35%</div><div class="case-metric-label">Precision prediccion</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--green)">130+</div><div class="case-metric-label">Estructuras monitoreadas</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--azure)">$400M+</div><div class="case-metric-label">Inversión en seguridad</div></div>
+          <div class="case-metric"><div class="case-metric-val" style="color:var(--orange)">Horas</div><div class="case-metric-label">vs. días de detección</div></div>
         </div>
       </div>
-      <div class="case-source">Fuente: CIM Magazine 2026 &middot; Vale Technology Report</div>
+      <div class="case-source">Fuente: Vale Dam Safety Reports &middot; Worldsensing &middot; IDS GeoRadar</div>
     </div>
   </div>
 
-  <!-- QUIZ 3 -->
   <div class="qc ao" id="quiz3" style="margin-top:36px;">
-    <div class="qq">🧪 Checkpoint: De los casos anteriores, cual demuestra el payback mas rapido y por que?</div>
+    <div class="qq">🧪 Checkpoint: De los casos anteriores, ¿cuál demuestra el payback más rápido y por qué?</div>
     <div class="qos">
-      <div class="qo" onclick="checkQ(this,'quiz3',false)"><span class="ql">A</span>Rio Tinto — porque los camiones autonomos eliminan salarios</div>
+      <div class="qo" onclick="checkQ(this,'quiz3',false)"><span class="ql">A</span>Rio Tinto — porque los camiones autónomos eliminan salarios</div>
       <div class="qo" onclick="checkQ(this,'quiz3',true)"><span class="ql">B</span>Freeport — porque optimizar el throughput existente genera valor inmediato sin CAPEX pesado</div>
       <div class="qo" onclick="checkQ(this,'quiz3',false)"><span class="ql">C</span>Newmont — porque la seguridad reduce costos de seguros</div>
-      <div class="qo" onclick="checkQ(this,'quiz3',false)"><span class="ql">D</span>Codelco — porque el gemelo digital reemplaza la mina fisica</div>
+      <div class="qo" onclick="checkQ(this,'quiz3',false)"><span class="ql">D</span>Codelco — porque el gemelo digital reemplaza la mina física</div>
     </div>
     <div class="qf" id="quiz3-fb"></div>
   </div>
 </section>
 
-<!-- ===== 8. ASSESSMENT DE MADUREZ ===== -->
+<!-- ===== 8. ESTRATEGIA 2026 ===== -->
+<section class="S" id="strategy">
+  <div class="sn">07 — Estrategia</div>
+  <h2>5 Ejes Estratégicos para IA<br>en Minería — 2026</h2>
+  <p class="sub">Basado en BHP, McKinsey, Deloitte, Global Mining Review y CIM Magazine. No se trata de adoptar IA — se trata de adoptar la estrategia correcta.</p>
+
+  <div class="strat-grid ao">
+    <div class="strat-card active" onclick="showStrat(0,this)"><div class="strat-num">01</div><div class="strat-name">Datos como Ventaja</div></div>
+    <div class="strat-card" onclick="showStrat(1,this)"><div class="strat-num">02</div><div class="strat-name">Personas al Centro</div></div>
+    <div class="strat-card" onclick="showStrat(2,this)"><div class="strat-num">03</div><div class="strat-name">Arquitectura de 3 Capas</div></div>
+    <div class="strat-card" onclick="showStrat(3,this)"><div class="strat-num">04</div><div class="strat-name">Transparencia = Capital</div></div>
+    <div class="strat-card" onclick="showStrat(4,this)"><div class="strat-num">05</div><div class="strat-name">Empezar Pequeño, Escalar Rápido</div></div>
+  </div>
+
+  <div class="strat-detail active" id="strat-0">
+    <h3>Eje 1: Los Datos Definen el Liderazgo</h3>
+    <div class="g2" style="margin-top:16px">
+      <div>
+        <p style="color:var(--t2);line-height:1.7">Las mineras que conectan datos geológicos, operacionales y financieros obtienen ventaja competitiva. Hoy, <strong>60-73% de los datos de sensores mineros no se utilizan</strong> (Skillings, 2026). El uso de datos de sensores pasó de 15% a 85% en operaciones que implementaron IA predictiva.</p>
+        <p style="color:var(--t2);margin-top:12px;line-height:1.7"><strong>Acción inmediata:</strong> Auditar qué datos se generan vs. cuáles se usan. Cerrar la "brecha de datos" es el primer paso — antes de cualquier modelo de IA.</p>
+      </div>
+      <div class="c" style="padding:20px">
+        <h3>Métricas Clave</h3>
+        <p>&#x2022; 60-73% de datos mineros sin utilizar<br>&#x2022; Uso de sensores: 15% → 85% con IA<br>&#x2022; $100K+/hora costo de downtime en cobre/oro<br>&#x2022; Operaciones mantienen 35% del OPEX → reducible a 24%</p>
+        <p style="margin-top:10px;font-size:.7rem;color:var(--t3)">Fuentes: Skillings.net 2026, BHP 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="strat-detail" id="strat-1">
+    <h3>Eje 2: Las Personas Son Centrales en el Progreso Digital</h3>
+    <div class="g2" style="margin-top:16px">
+      <div>
+        <p style="color:var(--t2);line-height:1.7">La automatización transforma la naturaleza del trabajo, pero la experiencia humana sigue siendo crítica. Las empresas visionarias invierten en <strong>alfabetización digital, habilidades de automatización y resolución adaptativa de problemas</strong> (Global Mining Review, 2025).</p>
+        <p style="color:var(--t2);margin-top:12px;line-height:1.7"><strong>El nuevo perfil:</strong> "Maintenance Data Scientists" — profesionales que combinan ingeniería mecánica con ciencia de datos. No reemplazar personas, sino crear <strong>superagentes humano+máquina</strong>.</p>
+      </div>
+      <div class="c" style="padding:20px">
+        <h3>Datos Deloitte 2026</h3>
+        <p>&#x2022; La brecha de habilidades IA es la barrera #1<br>&#x2022; Sólo 34% de líderes reimaginan su negocio con IA<br>&#x2022; 50% más de trabajadores tienen acceso a IA en 2025 vs. 2024<br>&#x2022; Educación, no rediseño de flujos, es la estrategia principal de talento</p>
+        <p style="margin-top:10px;font-size:.7rem;color:var(--t3)">Fuentes: Deloitte State of AI 2026, Global Mining Review</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="strat-detail" id="strat-2">
+    <h3>Eje 3: Arquitectura de 3 Capas para Minería</h3>
+    <div class="g2" style="margin-top:16px">
+      <div>
+        <p style="color:var(--t2);line-height:1.7">La arquitectura probada para mantenimiento predictivo en minería tiene tres capas:</p>
+        <div style="margin:16px 0">
+          <div class="c" style="margin-bottom:8px;padding:14px;border-left:3px solid var(--azure)"><p><strong style="color:var(--azure)">Capa 1 — Edge:</strong> Sensores de vibración, térmicos y acústicos directamente en el equipo. Procesamiento local para baja latencia.</p></div>
+          <div class="c" style="margin-bottom:8px;padding:14px;border-left:3px solid var(--purple)"><p><strong style="color:var(--purple)">Capa 2 — Digital Twin:</strong> Plataforma de simulación que replica el equipo y proceso. Permite predecir escenarios sin riesgo.</p></div>
+          <div class="c" style="padding:14px;border-left:3px solid var(--green)"><p><strong style="color:var(--green)">Capa 3 — Deep Learning:</strong> Algoritmos entrenados con datos históricos de fallas. Detectan patrones invisibles al ojo humano.</p></div>
+        </div>
+      </div>
+      <div class="c" style="padding:20px">
+        <h3>Caso Real: Mina Cobre-Oro</h3>
+        <p style="color:var(--t2);line-height:1.7">Una operación detectó un aumento de vibración de <strong>40x</strong> en un molino primario semanas antes de la falla, permitiendo mantenimiento programado que evitó una parada de <strong>20 días</strong>.</p>
+        <p style="margin-top:12px;color:var(--t2)">Transición futura: de predictivo (qué va a fallar) a <strong>prescriptivo</strong> (reparar automáticamente + integrar supply chain).</p>
+        <p style="margin-top:10px;font-size:.7rem;color:var(--t3)">Fuente: Skillings.net, 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="strat-detail" id="strat-3">
+    <h3>Eje 4: Transparencia Digital = Capital de Inversión</h3>
+    <div class="g2" style="margin-top:16px">
+      <div>
+        <p style="color:var(--t2);line-height:1.7">Los inversores ahora evalúan la <strong>madurez digital</strong> junto al potencial del proyecto. Las empresas que producen reportes precisos y data-driven sobre desempeño y cumplimiento ESG aseguran mayor credibilidad y mejores condiciones de financiamiento.</p>
+        <p style="color:var(--t2);margin-top:12px;line-height:1.7">El 77% de los profesionales de exploración ya usan herramientas de IA (CIM 2026), pero <strong>22% no reportan resultados observables</strong> aún. La clave: conectar los outputs de IA con métricas que los inversores entienden.</p>
+      </div>
+      <div class="c" style="padding:20px">
+        <h3>Adopción IA en Exploración (CIM 2026)</h3>
+        <p>&#x2022; 77% usan IA en algún grado<br>&#x2022; 56% de forma ocasional<br>&#x2022; 21% de forma regular<br>&#x2022; 84% creen que les beneficiará a corto plazo<br>&#x2022; Barreras: presupuesto, ROI poco claro, desconfianza en modelos, brecha de habilidades</p>
+        <p style="margin-top:10px;font-size:.7rem;color:var(--t3)">Fuente: VRIFY Technology / CIM Magazine, 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="strat-detail" id="strat-4">
+    <h3>Eje 5: Empezar Pequeño, Escalar Rápido</h3>
+    <div class="g2" style="margin-top:16px">
+      <div>
+        <p style="color:var(--t2);line-height:1.7">Las juniors mineras están liderando la innovación sin las restricciones de sistemas legacy. Aplican IA a exploración, planeación de producción y mantenimiento para descubrir eficiencias (Global Mining Review). <strong>La adaptabilidad compensa la escala.</strong></p>
+        <p style="color:var(--t2);margin-top:12px;line-height:1.7"><strong>Playbook recomendado:</strong></p>
+        <p style="color:var(--t2)">1. Auditoría de datos (semana 1-4)<br>2. Quick win en mantenimiento predictivo o HSE (mes 2-6)<br>3. Medir ROI real vs. baseline (mes 6-9)<br>4. Escalar lo que funciona, cancelar lo que no (mes 9-12)<br>5. Gobernanza + upskilling organizacional (continuo)</p>
+      </div>
+      <div class="c" style="padding:20px">
+        <h3>Líderes por Caso de Uso (Omdena 2026)</h3>
+        <p>&#x2022; <strong>Tata Steel:</strong> 550+ modelos IA en producción<br>&#x2022; <strong>KoBold Metals:</strong> ML para descubrimiento de minerales críticos<br>&#x2022; <strong>Fortescue:</strong> Haulaje autónomo a escala<br>&#x2022; <strong>Anglo American:</strong> Optimización de agua con IA<br>&#x2022; <strong>POSCO:</strong> IA cuántica para eficiencia de hornos</p>
+        <p style="margin-top:10px;font-size:.7rem;color:var(--t3)">Fuente: Omdena, 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 9. ASSESSMENT ===== -->
 <section class="S" id="assessment">
-  <div class="sn">07 — Auto-Diagnostico</div>
-  <h2>Assessment de Madurez IA<br>Para Tu Organizacion</h2>
-  <p class="sub">Evalua honestamente donde esta tu organizacion en cada dimension. El radar se actualiza en tiempo real. No hay respuestas correctas — hay diagnosticos honestos.</p>
+  <div class="sn">08 — Auto-Diagnóstico</div>
+  <h2>Assessment de Madurez IA<br>Para Tu Organización</h2>
+  <p class="sub">Evalúa honestamente dónde está tu organización en cada dimensión. El radar se actualiza en tiempo real. No hay respuestas correctas — hay diagnósticos honestos.</p>
 
   <div class="assess-wrap ao">
     <div>
       <div class="assess-q">
         <label>1. Calidad y acceso a datos</label>
         <div class="range-wrap"><input type="range" min="1" max="5" value="2" oninput="updateRadar(0,this.value)"><span class="assess-val">2</span></div>
-        <p style="font-size:.68rem;color:var(--t3);margin-top:4px">1=Silos/Excel &middot; 3=Data Lake basico &middot; 5=Data mesh gobernado</p>
+        <p style="font-size:.68rem;color:var(--t3);margin-top:4px">1=Silos/Excel &middot; 3=Data Lake básico &middot; 5=Data mesh gobernado</p>
       </div>
       <div class="assess-q">
         <label>2. Gobernanza de datos</label>
         <div class="range-wrap"><input type="range" min="1" max="5" value="2" oninput="updateRadar(1,this.value)"><span class="assess-val">2</span></div>
-        <p style="font-size:.68rem;color:var(--t3);margin-top:4px">1=Sin politicas &middot; 3=Roles definidos &middot; 5=Automatizada con lineage</p>
+        <p style="font-size:.68rem;color:var(--t3);margin-top:4px">1=Sin políticas &middot; 3=Roles definidos &middot; 5=Automatizada con lineage</p>
       </div>
       <div class="assess-q">
         <label>3. Talento y capacidades</label>
         <div class="range-wrap"><input type="range" min="1" max="5" value="2" oninput="updateRadar(2,this.value)"><span class="assess-val">2</span></div>
-        <p style="font-size:.68rem;color:var(--t3);margin-top:4px">1=Sin equipo IA &middot; 3=Equipo basico &middot; 5=CoE + upskilling org</p>
+        <p style="font-size:.68rem;color:var(--t3);margin-top:4px">1=Sin equipo IA &middot; 3=Equipo básico &middot; 5=CoE + upskilling org</p>
       </div>
       <div class="assess-q">
-        <label>4. Infraestructura tecnologica</label>
+        <label>4. Infraestructura tecnológica</label>
         <div class="range-wrap"><input type="range" min="1" max="5" value="2" oninput="updateRadar(3,this.value)"><span class="assess-val">2</span></div>
         <p style="font-size:.68rem;color:var(--t3);margin-top:4px">1=On-prem legacy &middot; 3=Cloud parcial &middot; 5=Cloud-native + edge</p>
       </div>
       <div class="assess-q">
-        <label>5. Cultura de innovacion</label>
+        <label>5. Cultura de innovación</label>
         <div class="range-wrap"><input type="range" min="1" max="5" value="2" oninput="updateRadar(4,this.value)"><span class="assess-val">2</span></div>
-        <p style="font-size:.68rem;color:var(--t3);margin-top:4px">1=Resistencia al cambio &middot; 3=Apertura &middot; 5=Experimentacion sistematica</p>
+        <p style="font-size:.68rem;color:var(--t3);margin-top:4px">1=Resistencia al cambio &middot; 3=Apertura &middot; 5=Experimentación sistemática</p>
       </div>
       <div class="assess-q">
-        <label>6. Liderazgo y vision estrategica</label>
+        <label>6. Liderazgo y visión estratégica</label>
         <div class="range-wrap"><input type="range" min="1" max="5" value="2" oninput="updateRadar(5,this.value)"><span class="assess-val">2</span></div>
         <p style="font-size:.68rem;color:var(--t3);margin-top:4px">1=Sin sponsor &middot; 3=Champion aislado &middot; 5=Board comprometido</p>
       </div>
       <div class="assess-q">
-        <label>7. Casos de uso en produccion</label>
+        <label>7. Casos de uso en producción</label>
         <div class="range-wrap"><input type="range" min="1" max="5" value="1" oninput="updateRadar(6,this.value)"><span class="assess-val">1</span></div>
-        <p style="font-size:.68rem;color:var(--t3);margin-top:4px">1=Ninguno &middot; 3=1-3 pilotos &middot; 5=10+ en produccion</p>
+        <p style="font-size:.68rem;color:var(--t3);margin-top:4px">1=Ninguno &middot; 3=1-3 pilotos &middot; 5=10+ en producción</p>
       </div>
       <div class="assess-q">
-        <label>8. Etica y compliance</label>
+        <label>8. Ética y compliance</label>
         <div class="range-wrap"><input type="range" min="1" max="5" value="2" oninput="updateRadar(7,this.value)"><span class="assess-val">2</span></div>
-        <p style="font-size:.68rem;color:var(--t3);margin-top:4px">1=Sin marco &middot; 3=Politicas basicas &middot; 5=Framework ISO 42001</p>
+        <p style="font-size:.68rem;color:var(--t3);margin-top:4px">1=Sin marco &middot; 3=Políticas básicas &middot; 5=Framework ISO 42001</p>
       </div>
     </div>
     <div class="radar-wrap">
       <canvas id="radarCanvas" width="400" height="400"></canvas>
       <div class="assess-score">
         <div class="score-val" id="scoreVal">2.0</div>
-        <div class="score-label" id="scoreLabel">NIVEL REACTIVO — Preparacion necesaria antes de IA</div>
+        <div class="score-label" id="scoreLabel">NIVEL REACTIVO — Preparación necesaria antes de IA</div>
       </div>
       <div style="margin-top:12px;padding:14px;background:var(--dark-3);border-radius:10px;font-size:.78rem;color:var(--t2);text-align:center;max-width:360px">
         <strong style="color:var(--orange)">Benchmark industria minera:</strong> 2.3/5 promedio (McKinsey 2026). Menos del 5% alcanza nivel 4+.
@@ -737,14 +808,14 @@ h3{font-size:1.15rem;font-weight:700;color:var(--azure);margin-bottom:10px}
   </div>
 </section>
 
-<!-- ===== 9. SIMULADOR DE CASO DE USO ===== -->
+<!-- ===== 10. SIMULADOR ===== -->
 <section class="S" id="simulator">
-  <div class="sn">08 — Simulador</div>
-  <h2>Que IA Necesita Mi Operacion?<br>Simulador de Caso de Uso</h2>
-  <p class="sub">Selecciona un area operativa y descubre la solucion IA recomendada, su complejidad, prerequisitos y ROI estimado.</p>
+  <div class="sn">09 — Simulador</div>
+  <h2>¿Qué IA Necesita Mi Operación?<br>Simulador de Caso de Uso</h2>
+  <p class="sub">Selecciona un área operativa y descubre la solución IA recomendada, su complejidad, prerequisitos y ROI estimado.</p>
 
   <div class="sim-grid ao">
-    <div class="sim-btn" onclick="showSim(0,this)"><div class="sim-icon">⛏️</div><div class="sim-name">Exploracion y Geologia</div></div>
+    <div class="sim-btn" onclick="showSim(0,this)"><div class="sim-icon">⛏️</div><div class="sim-name">Exploración y Geología</div></div>
     <div class="sim-btn" onclick="showSim(1,this)"><div class="sim-icon">🔧</div><div class="sim-name">Mantenimiento Predictivo</div></div>
     <div class="sim-btn" onclick="showSim(2,this)"><div class="sim-icon">🏭</div><div class="sim-name">Procesamiento / Planta</div></div>
     <div class="sim-btn" onclick="showSim(3,this)"><div class="sim-icon">🛡️</div><div class="sim-name">Seguridad (HSE)</div></div>
@@ -753,230 +824,166 @@ h3{font-size:1.15rem;font-weight:700;color:var(--azure);margin-bottom:10px}
   </div>
 
   <div class="sim-result" id="sim-0">
-    <h3 style="color:var(--orange)">Exploracion y Geologia con IA</h3>
+    <h3 style="color:var(--orange)">Exploración y Geología con IA</h3>
     <div class="g2" style="margin-top:16px">
-      <div>
-        <p style="color:var(--t2);line-height:1.7"><strong>Solucion:</strong> ML para analisis de datos geologicos, interpretacion de imagenes satelitales y sondajes. Modelos predictivos para identificar depositos.</p>
-        <p style="color:var(--t2);margin-top:12px"><strong>Tecnologia:</strong> Random Forest / XGBoost para clasificacion geologica + Vision por computadora para imagenes hiperespectrales + RAG sobre documentacion tecnica historica.</p>
-      </div>
-      <div class="c" style="padding:20px">
-        <p><strong style="color:var(--azure)">Complejidad:</strong> Alta (12-18 meses)</p>
-        <p style="margin-top:8px"><strong style="color:var(--green)">ROI esperado:</strong> -50% perforaciones fallidas, +35% precision</p>
-        <p style="margin-top:8px"><strong style="color:var(--orange)">Prerequisitos:</strong> Datos geologicos historicos digitalizados, imagenes satelitales, equipo de geocientificos + ML engineers</p>
-        <p style="margin-top:8px"><strong style="color:var(--purple)">Madurez requerida:</strong> Nivel 3+</p>
-      </div>
+      <div><p style="color:var(--t2);line-height:1.7"><strong>Solución:</strong> ML para análisis de datos geológicos, interpretación de imágenes satelitales e hiperespectrales. Modelos predictivos para identificar depósitos. 77% de profesionales de exploración ya usan IA (CIM 2026).</p><p style="color:var(--t2);margin-top:12px"><strong>Tecnología:</strong> Random Forest / XGBoost + Visión por computadora + RAG sobre documentación histórica. Referente: KoBold Metals.</p></div>
+      <div class="c" style="padding:20px"><p><strong style="color:var(--azure)">Complejidad:</strong> Alta (12-18 meses)</p><p style="margin-top:8px"><strong style="color:var(--green)">ROI esperado:</strong> -50% perforaciones fallidas, +35% precisión</p><p style="margin-top:8px"><strong style="color:var(--orange)">Prerequisitos:</strong> Datos geológicos históricos digitalizados, imágenes satelitales</p><p style="margin-top:8px"><strong style="color:var(--purple)">Madurez requerida:</strong> Nivel 3+</p></div>
     </div>
   </div>
-
   <div class="sim-result" id="sim-1">
     <h3 style="color:var(--azure)">Mantenimiento Predictivo</h3>
     <div class="g2" style="margin-top:16px">
-      <div>
-        <p style="color:var(--t2);line-height:1.7"><strong>Solucion:</strong> Sensores IoT + modelos de ML que predicen fallas 2-4 semanas antes. Reduce downtime no planificado y extiende vida util de activos.</p>
-        <p style="color:var(--t2);margin-top:12px"><strong>Tecnologia:</strong> Time-series forecasting (LSTM/Transformer) + Anomaly detection + Dashboard de alertas + Integracion con ERP/CMMS.</p>
-      </div>
-      <div class="c" style="padding:20px">
-        <p><strong style="color:var(--azure)">Complejidad:</strong> Media (6-12 meses)</p>
-        <p style="margin-top:8px"><strong style="color:var(--green)">ROI esperado:</strong> -30% downtime, ROI 200%+ en 18 meses</p>
-        <p style="margin-top:8px"><strong style="color:var(--orange)">Prerequisitos:</strong> Sensores en equipos criticos, historico de fallas, conectividad (edge computing si remoto)</p>
-        <p style="margin-top:8px"><strong style="color:var(--purple)">Madurez requerida:</strong> Nivel 2+</p>
-      </div>
+      <div><p style="color:var(--t2);line-height:1.7"><strong>Solución:</strong> Arquitectura de 3 capas (Edge + Digital Twin + Deep Learning). Reduce downtime no planificado 20-30%. Ahorro >$100K por hora evitada de parada en cobre/oro.</p><p style="color:var(--t2);margin-top:12px"><strong>Tecnología:</strong> Sensores vibración/térmicos/acústicos + LSTM/Transformer + Dashboard alertas. Referentes: BHP, Tata Steel (550+ modelos).</p></div>
+      <div class="c" style="padding:20px"><p><strong style="color:var(--azure)">Complejidad:</strong> Media (6-12 meses)</p><p style="margin-top:8px"><strong style="color:var(--green)">ROI esperado:</strong> -20-30% downtime, OPEX de 35% → 24%</p><p style="margin-top:8px"><strong style="color:var(--orange)">Prerequisitos:</strong> Sensores en equipos críticos, histórico de fallas, edge computing</p><p style="margin-top:8px"><strong style="color:var(--purple)">Madurez requerida:</strong> Nivel 2+</p></div>
     </div>
   </div>
-
   <div class="sim-result" id="sim-2">
-    <h3 style="color:var(--green)">Optimizacion de Planta / Procesamiento</h3>
+    <h3 style="color:var(--green)">Optimización de Planta / Procesamiento</h3>
     <div class="g2" style="margin-top:16px">
-      <div>
-        <p style="color:var(--t2);line-height:1.7"><strong>Solucion:</strong> ML para optimizar parametros de molienda, flotacion y lixiviacion en tiempo real. Maximizar recuperacion minimizando consumo energetico.</p>
-        <p style="color:var(--t2);margin-top:12px"><strong>Tecnologia:</strong> Reinforcement Learning para control de procesos + Digital Twin de la planta + Optimizacion multi-objetivo.</p>
-      </div>
-      <div class="c" style="padding:20px">
-        <p><strong style="color:var(--azure)">Complejidad:</strong> Alta (12-24 meses)</p>
-        <p style="margin-top:8px"><strong style="color:var(--green)">ROI esperado:</strong> +5-10% recuperacion, payback 3-6 meses</p>
-        <p style="margin-top:8px"><strong style="color:var(--orange)">Prerequisitos:</strong> SCADA/DCS integrado, datos de proceso historicos, partnership con vendor de IA industrial</p>
-        <p style="margin-top:8px"><strong style="color:var(--purple)">Madurez requerida:</strong> Nivel 3+</p>
-      </div>
+      <div><p style="color:var(--t2);line-height:1.7"><strong>Solución:</strong> ML para optimizar parámetros de molienda, flotación y lixiviación en tiempo real. Caso Freeport: +1-3% recuperación Cu = ~$150M/año.</p><p style="color:var(--t2);margin-top:12px"><strong>Tecnología:</strong> Reinforcement Learning + Digital Twin de planta + Optimización multi-objetivo. Referentes: Freeport-McMoRan, POSCO.</p></div>
+      <div class="c" style="padding:20px"><p><strong style="color:var(--azure)">Complejidad:</strong> Alta (12-24 meses)</p><p style="margin-top:8px"><strong style="color:var(--green)">ROI esperado:</strong> +5-10% recuperación, payback 3-6 meses</p><p style="margin-top:8px"><strong style="color:var(--orange)">Prerequisitos:</strong> SCADA/DCS integrado, datos de proceso históricos</p><p style="margin-top:8px"><strong style="color:var(--purple)">Madurez requerida:</strong> Nivel 3+</p></div>
     </div>
   </div>
-
   <div class="sim-result" id="sim-3">
     <h3 style="color:var(--red)">Seguridad Minera (HSE)</h3>
     <div class="g2" style="margin-top:16px">
-      <div>
-        <p style="color:var(--t2);line-height:1.7"><strong>Solucion:</strong> Vision por computadora para EPP, zonas de exclusion, fatiga de operadores. Wearables con IA para biometria. Alertas en tiempo real.</p>
-        <p style="color:var(--t2);margin-top:12px"><strong>Tecnologia:</strong> Computer Vision (YOLO/detectores) + Edge AI para procesamiento local + NLP para reportes de incidentes.</p>
-      </div>
-      <div class="c" style="padding:20px">
-        <p><strong style="color:var(--azure)">Complejidad:</strong> Media (4-8 meses)</p>
-        <p style="margin-top:8px"><strong style="color:var(--green)">ROI esperado:</strong> -60% incidentes, ROI intangible alto (vidas)</p>
-        <p style="margin-top:8px"><strong style="color:var(--orange)">Prerequisitos:</strong> Camaras en puntos criticos, red WiFi/LTE en mina, politica de privacidad</p>
-        <p style="margin-top:8px"><strong style="color:var(--purple)">Madurez requerida:</strong> Nivel 2+</p>
-      </div>
+      <div><p style="color:var(--t2);line-height:1.7"><strong>Solución:</strong> Visión por computadora para EPP, zonas de exclusión, fatiga de operadores. Wearables con IA para biometría. Caso Newmont: -40% incidentes. Referente: Nornickel (condiciones extremas).</p><p style="color:var(--t2);margin-top:12px"><strong>Tecnología:</strong> Computer Vision (YOLO) + Edge AI + NLP para reportes de incidentes.</p></div>
+      <div class="c" style="padding:20px"><p><strong style="color:var(--azure)">Complejidad:</strong> Media (4-8 meses)</p><p style="margin-top:8px"><strong style="color:var(--green)">ROI esperado:</strong> -40-60% incidentes, ROI intangible alto (vidas)</p><p style="margin-top:8px"><strong style="color:var(--orange)">Prerequisitos:</strong> Cámaras en puntos críticos, red WiFi/LTE, política de privacidad</p><p style="margin-top:8px"><strong style="color:var(--purple)">Madurez requerida:</strong> Nivel 2+</p></div>
     </div>
   </div>
-
   <div class="sim-result" id="sim-4">
     <h3 style="color:var(--green)">Ambiental / ESG</h3>
     <div class="g2" style="margin-top:16px">
-      <div>
-        <p style="color:var(--t2);line-height:1.7"><strong>Solucion:</strong> Monitoreo ambiental con sensores + satelites. Prediccion de impactos, optimizacion de consumo de agua y energia. Reporte ESG automatizado.</p>
-        <p style="color:var(--t2);margin-top:12px"><strong>Tecnologia:</strong> Remote sensing + ML para prediccion de calidad de agua/aire + NLP para generacion de reportes regulatorios.</p>
-      </div>
-      <div class="c" style="padding:20px">
-        <p><strong style="color:var(--azure)">Complejidad:</strong> Media (6-12 meses)</p>
-        <p style="margin-top:8px"><strong style="color:var(--green)">ROI esperado:</strong> -20% consumo agua, compliance automatizado</p>
-        <p style="margin-top:8px"><strong style="color:var(--orange)">Prerequisitos:</strong> Sensores ambientales, datos historicos, integracion con reportes regulatorios</p>
-        <p style="margin-top:8px"><strong style="color:var(--purple)">Madurez requerida:</strong> Nivel 2+</p>
-      </div>
+      <div><p style="color:var(--t2);line-height:1.7"><strong>Solución:</strong> Monitoreo ambiental con sensores + satélites. Predicción de impactos. Referentes: Vale (130+ represas monitoreadas), Anglo American (optimización de agua).</p><p style="color:var(--t2);margin-top:12px"><strong>Tecnología:</strong> Remote sensing + ML para calidad agua/aire + NLP para reportes regulatorios + InSAR satelital.</p></div>
+      <div class="c" style="padding:20px"><p><strong style="color:var(--azure)">Complejidad:</strong> Media (6-12 meses)</p><p style="margin-top:8px"><strong style="color:var(--green)">ROI esperado:</strong> -20% consumo agua, compliance automatizado</p><p style="margin-top:8px"><strong style="color:var(--orange)">Prerequisitos:</strong> Sensores ambientales, datos históricos, integración regulatoria</p><p style="margin-top:8px"><strong style="color:var(--purple)">Madurez requerida:</strong> Nivel 2+</p></div>
     </div>
   </div>
-
   <div class="sim-result" id="sim-5">
     <h3 style="color:var(--purple)">Supply Chain Minero</h3>
     <div class="g2" style="margin-top:16px">
-      <div>
-        <p style="color:var(--t2);line-height:1.7"><strong>Solucion:</strong> Optimizacion de inventario de repuestos criticos, prediccion de demanda, logistica de transporte de mineral. Agentes IA para procurement.</p>
-        <p style="color:var(--t2);margin-top:12px"><strong>Tecnologia:</strong> Forecasting con Transformers + Optimization (OR) + Agentes LLM para ordenes de compra automatizadas via MCP.</p>
-      </div>
-      <div class="c" style="padding:20px">
-        <p><strong style="color:var(--azure)">Complejidad:</strong> Media-Alta (8-14 meses)</p>
-        <p style="margin-top:8px"><strong style="color:var(--green)">ROI esperado:</strong> -25% inventario, -15% costos logisticos</p>
-        <p style="margin-top:8px"><strong style="color:var(--orange)">Prerequisitos:</strong> ERP integrado, datos de inventario y consumo, proveedores con APIs</p>
-        <p style="margin-top:8px"><strong style="color:var(--purple)">Madurez requerida:</strong> Nivel 3+</p>
-      </div>
+      <div><p style="color:var(--t2);line-height:1.7"><strong>Solución:</strong> Optimización de inventario de repuestos críticos, predicción de demanda, logística de transporte. Agentes IA para procurement automatizado.</p><p style="color:var(--t2);margin-top:12px"><strong>Tecnología:</strong> Forecasting con Transformers + Optimización (OR) + Agentes LLM para órdenes de compra vía MCP.</p></div>
+      <div class="c" style="padding:20px"><p><strong style="color:var(--azure)">Complejidad:</strong> Media-Alta (8-14 meses)</p><p style="margin-top:8px"><strong style="color:var(--green)">ROI esperado:</strong> -25% inventario, -15% costos logísticos</p><p style="margin-top:8px"><strong style="color:var(--orange)">Prerequisitos:</strong> ERP integrado, datos de inventario y consumo</p><p style="margin-top:8px"><strong style="color:var(--purple)">Madurez requerida:</strong> Nivel 3+</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===== 10. TRANSFORMACION ===== -->
+<!-- ===== 11. TRANSFORMACIÓN ===== -->
 <section class="S" id="transformation">
-  <div class="sn">09 — Transformacion y Etica</div>
-  <h2>Transformacion Digital, Etica<br>y Gestion del Cambio</h2>
-  <p class="sub">Para 2026, mas del 75% de las empresas pasaran de pilotar a operacionalizar IA. Pero solo el 30% de los pilotos escalan. La diferencia: gestion del cambio y etica desde el diseno.</p>
+  <div class="sn">10 — Transformación y Ética</div>
+  <h2>Transformación Digital, Ética<br>y Gestión del Cambio</h2>
+  <p class="sub">Para 2026, más del 75% de las empresas pasarán de pilotar a operacionalizar IA. Pero la gobernanza va rezagada: sólo el 20% tiene modelos de supervisión maduros (Deloitte).</p>
 
   <div class="g2 ao">
     <div>
-      <h3>Los 5 Pilares de la IA Etica</h3>
-      <div class="ai" onclick="toggleAcc(this)"><div class="ah">1. Transparencia y Explicabilidad<span class="aico">+</span></div><div class="ab"><div class="abi">En operaciones mineras de seguridad critica, cada decision de IA debe ser explicable. Si un modelo recomienda detener una operacion, el equipo debe entender por que. ISO/IEC 42001:2023 provee el marco. Madurez promedio global en IA responsable: 2.3/5 (McKinsey, 2026).</div></div></div>
-      <div class="ai" onclick="toggleAcc(this)"><div class="ah">2. Equidad y No-Discriminacion<span class="aico">+</span></div><div class="ab"><div class="abi">Los sesgos pueden aparecer en contratacion, asignacion de recursos, evaluacion de desempeno. Auditorias de sesgo (bias testing) deben ser parte del ciclo de vida de cada modelo.</div></div></div>
-      <div class="ai" onclick="toggleAcc(this)"><div class="ah">3. Privacidad y Proteccion de Datos<span class="aico">+</span></div><div class="ab"><div class="abi">Wearables, camaras IA, GPS: la linea entre seguridad y vigilancia es delgada. Las politicas deben balancear proteccion del trabajador con privacidad.</div></div></div>
-      <div class="ai" onclick="toggleAcc(this)"><div class="ah">4. Seguridad y Robustez<span class="aico">+</span></div><div class="ab"><div class="abi">Fail-safes, redundancia, human-in-the-loop para decisiones criticas. Model drift: sin deteccion temprana, las predicciones se degradan silenciosamente.</div></div></div>
-      <div class="ai" onclick="toggleAcc(this)"><div class="ah">5. Responsabilidad y Rendicion de Cuentas<span class="aico">+</span></div><div class="ab"><div class="abi">Quien responde cuando la IA se equivoca? Cadenas claras de responsabilidad, comite de etica, proceso de aprobacion de modelos.</div></div></div>
+      <h3>Los 5 Pilares de la IA Ética</h3>
+      <div class="ai" onclick="toggleAcc(this)"><div class="ah">1. Transparencia y Explicabilidad<span class="aico">+</span></div><div class="ab"><div class="abi">En operaciones mineras de seguridad crítica, cada decisión de IA debe ser explicable. Si un modelo recomienda detener una operación, el equipo debe entender por qué. ISO/IEC 42001:2023 provee el marco. Madurez promedio global en IA responsable: 2.3/5 (McKinsey, 2026).</div></div></div>
+      <div class="ai" onclick="toggleAcc(this)"><div class="ah">2. Equidad y No-Discriminación<span class="aico">+</span></div><div class="ab"><div class="abi">Los sesgos pueden aparecer en contratación, asignación de recursos, evaluación de desempeño. Auditorías de sesgo deben ser parte del ciclo de vida de cada modelo.</div></div></div>
+      <div class="ai" onclick="toggleAcc(this)"><div class="ah">3. Privacidad y Protección de Datos<span class="aico">+</span></div><div class="ab"><div class="abi">Wearables, cámaras IA, GPS: la línea entre seguridad y vigilancia es delgada. Las políticas deben balancear protección del trabajador con privacidad.</div></div></div>
+      <div class="ai" onclick="toggleAcc(this)"><div class="ah">4. Seguridad y Robustez<span class="aico">+</span></div><div class="ab"><div class="abi">Fail-safes, redundancia, human-in-the-loop para decisiones críticas. Model drift: sin detección temprana, las predicciones se degradan silenciosamente.</div></div></div>
+      <div class="ai" onclick="toggleAcc(this)"><div class="ah">5. Responsabilidad y Rendición de Cuentas<span class="aico">+</span></div><div class="ab"><div class="abi">¿Quién responde cuando la IA se equivoca? Cadenas claras de responsabilidad, comité de ética, proceso de aprobación de modelos.</div></div></div>
     </div>
     <div>
-      <h3>Gestion del Cambio: Lo Que Falla</h3>
-      <div class="c" style="margin-bottom:12px;border-left:3px solid var(--red)"><p><strong style="color:var(--red)">Error #1:</strong> Esperar al ultimo momento para planificar el change management. Es la causa fundamental del fracaso en transformacion digital.</p></div>
-      <div class="c" style="margin-bottom:12px;border-left:3px solid var(--orange)"><p><strong style="color:var(--orange)">Error #2:</strong> Tratar la adopcion de IA como un problema tecnologico. CEOs concluiran en 2026 que es un problema de workforce y management (CIO Magazine).</p></div>
-      <div class="c" style="margin-bottom:12px;border-left:3px solid var(--purple)"><p><strong style="color:var(--purple)">Error #3:</strong> No invertir en upskilling. 60% citan brecha de conocimiento como barrera #1. No solo data scientists — toda la organizacion necesita capacitacion.</p></div>
-      <div class="c" style="border-left:3px solid var(--green)"><p><strong style="color:var(--green)">Lo que funciona:</strong> Senior leadership buy-in, comunicacion clara, formacion continua, graduated autonomy, y cultura de experimentacion.</p></div>
+      <h3>Gestión del Cambio: Lo Que Falla</h3>
+      <div class="c" style="margin-bottom:12px;border-left:3px solid var(--red)"><p><strong style="color:var(--red)">Error #1:</strong> Esperar al último momento para planificar el change management. Es la causa fundamental del fracaso en transformación digital.</p></div>
+      <div class="c" style="margin-bottom:12px;border-left:3px solid var(--orange)"><p><strong style="color:var(--orange)">Error #2:</strong> Tratar la adopción de IA como un problema tecnológico. Los CEOs concluirán en 2026 que es un problema de workforce y management.</p></div>
+      <div class="c" style="margin-bottom:12px;border-left:3px solid var(--purple)"><p><strong style="color:var(--purple)">Error #3:</strong> No invertir en upskilling. La brecha de habilidades es la barrera #1 (Deloitte). No sólo data scientists — toda la organización.</p></div>
+      <div class="c" style="border-left:3px solid var(--green)"><p><strong style="color:var(--green)">Lo que funciona:</strong> Senior leadership buy-in, comunicación clara, formación continua, graduated autonomy, y cultura de experimentación.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===== 11. CULTURA ===== -->
+<!-- ===== 12. CULTURA ===== -->
 <section class="S" id="culture">
-  <div class="sn">10 — Cultura de la Transformacion</div>
+  <div class="sn">11 — Cultura de la Transformación</div>
   <h2>La IA No Es Una Herramienta.<br>Es Una Forma de Pensar.</h2>
-  <p class="sub">Las 5 preguntas que todo Board debe hacerse antes de invertir en IA. La cultura organizativa es el obstaculo mas silencioso — y el mas determinante.</p>
+  <p class="sub">Las 5 preguntas que todo Board debe hacerse antes de invertir en IA. La cultura organizativa es el obstáculo más silencioso — y el más determinante.</p>
 
   <div class="ao">
-    <div class="ai" onclick="toggleAcc(this)"><div class="ah">1. Cual es nuestro nivel REAL de madurez?<span class="aico">+</span></div><div class="ab"><div class="abi">No el aspiracional. Tenemos datos gobernados? Modelos en produccion? Quien es responsable? Promedio global: 2.3/5 (McKinsey). Solo 1/3 de organizaciones tiene madurez nivel 3+. La auto-evaluacion honesta es el primer paso.</div></div></div>
-    <div class="ai" onclick="toggleAcc(this)"><div class="ah">2. Donde puede la IA crear mas valor mas rapido?<span class="aico">+</span></div><div class="ab"><div class="abi">No intentar IA en todo. JTBD: cual es el trabajo que necesitamos hacer? Mantenimiento predictivo y seguridad suelen ser quick wins en mineria.</div></div></div>
-    <div class="ai" onclick="toggleAcc(this)"><div class="ah">3. Tenemos la fundacion de datos?<span class="aico">+</span></div><div class="ab"><div class="abi">62% citan gobernanza como principal impedimento. $12.9M anuales en remediacion de calidad (Gartner). Organizaciones data-driven: 23x mas adquisicion de clientes, 19x mas rentables.</div></div></div>
-    <div class="ai" onclick="toggleAcc(this)"><div class="ah">4. Como gobernamos la IA responsablemente?<span class="aico">+</span></div><div class="ab"><div class="abi">No es solo etica; es riesgo empresarial. EU AI Act: multas hasta 7% revenue global. Framework con roles claros, auditorias, monitoreo de modelos. 50% de gobiernos regulando para 2026.</div></div></div>
-    <div class="ai" onclick="toggleAcc(this)"><div class="ah">5. Estamos listos culturalmente?<span class="aico">+</span></div><div class="ab"><div class="abi">La pregunta mas importante. La adopcion de IA es un problema de management, no de tecnologia. Requiere: liderazgo comprometido, cultura de experimentacion, tolerancia al error, upskilling generalizado, y paciencia — la madurez toma 18-36 meses.</div></div></div>
+    <div class="ai" onclick="toggleAcc(this)"><div class="ah">1. ¿Cuál es nuestro nivel REAL de madurez?<span class="aico">+</span></div><div class="ab"><div class="abi">No el aspiracional. ¿Tenemos datos gobernados? ¿Modelos en producción? ¿Quién es responsable? Promedio global: 2.3/5 (McKinsey). Sólo 42% de líderes creen que su estrategia está preparada para IA (Deloitte), y la confianza cae drásticamente en infra, datos y talento.</div></div></div>
+    <div class="ai" onclick="toggleAcc(this)"><div class="ah">2. ¿Dónde puede la IA crear más valor más rápido?<span class="aico">+</span></div><div class="ab"><div class="abi">No intentar IA en todo. JTBD: ¿cuál es el trabajo que necesitamos hacer? Mantenimiento predictivo (payback 3-6 meses) y seguridad suelen ser quick wins en minería. Las aplicaciones focalizadas entregan ROI más rápido que las transformaciones completas (Omdena).</div></div></div>
+    <div class="ai" onclick="toggleAcc(this)"><div class="ah">3. ¿Tenemos la fundación de datos?<span class="aico">+</span></div><div class="ab"><div class="abi">60-73% de datos de sensores mineros no se utilizan (Skillings). $12.9M anuales en remediación de calidad (Gartner). Organizaciones data-driven: 23x más adquisición de clientes, 19x más rentables (McKinsey).</div></div></div>
+    <div class="ai" onclick="toggleAcc(this)"><div class="ah">4. ¿Cómo gobernamos la IA responsablemente?<span class="aico">+</span></div><div class="ab"><div class="abi">No es sólo ética; es riesgo empresarial. EU AI Act: multas hasta 7% revenue global. Sólo 20% tienen gobernanza madura (Deloitte). Framework: ISO 42001 + roles claros + auditorías + monitoreo de modelos.</div></div></div>
+    <div class="ai" onclick="toggleAcc(this)"><div class="ah">5. ¿Estamos listos culturalmente?<span class="aico">+</span></div><div class="ab"><div class="abi">La pregunta más importante. La adopción de IA es un problema de management, no de tecnología. Requiere: liderazgo comprometido, cultura de experimentación, tolerancia al error, upskilling generalizado, y paciencia — la madurez toma 18-36 meses.</div></div></div>
   </div>
 
   <div class="c gb ao" style="margin-top:32px;padding:30px;text-align:center;">
     <p style="font-size:1.1rem;font-weight:700;color:var(--azure);">Datos → Gobernanza → Cultura → IA → Valor</p>
-    <p style="font-size:.88rem;color:var(--t2);margin-top:8px;">No al reves. El orden importa. Sin datos gobernados y cultura receptiva, la IA es solo un gasto elegante.</p>
+    <p style="font-size:.88rem;color:var(--t2);margin-top:8px;">No al revés. El orden importa. Sin datos gobernados y cultura receptiva, la IA es sólo un gasto elegante.</p>
   </div>
 </section>
 
-<!-- ===== 12. PROXIMAS SESIONES ===== -->
+<!-- ===== 13. PRÓXIMAS SESIONES ===== -->
 <section class="S" id="next-sessions">
-  <div class="sn">Proximas Sesiones</div>
-  <h2>Este Es Solo el Comienzo.<br>3 Sesiones Para Transformar.</h2>
-  <p class="sub">La Sesion 1 sienta las bases conceptuales. Las siguientes dos sesiones van de la teoria a la practica directa.</p>
+  <div class="sn">Próximas Sesiones</div>
+  <h2>Este Es Sólo el Comienzo.<br>3 Sesiones Para Transformar.</h2>
+  <p class="sub">La Sesión 1 sienta las bases conceptuales. Las siguientes dos sesiones van de la teoría a la práctica directa.</p>
 
   <div class="g3 ao" style="margin-top:36px;">
     <div class="session-teaser" style="border-color:rgba(0,169,224,.3);">
       <div class="session-num">01</div>
       <h3 style="font-size:1.1rem;color:var(--t1)">AI First: Fundamentos</h3>
-      <p style="font-size:.82rem;color:var(--t2);margin-top:8px;line-height:1.5">Que es la IA, por que falla, ROI, gobernanza, casos reales, assessment de madurez.</p>
-      <div style="margin-top:12px;padding:4px 14px;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.25);border-radius:20px;font-size:.65rem;font-weight:700;color:var(--green);letter-spacing:1px;display:inline-block">SESION ACTUAL</div>
+      <p style="font-size:.82rem;color:var(--t2);margin-top:8px;line-height:1.5">Qué es la IA, por qué falla, ROI, gobernanza, casos reales, estrategia, assessment de madurez.</p>
+      <div style="margin-top:12px;padding:4px 14px;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.25);border-radius:20px;font-size:.65rem;font-weight:700;color:var(--green);letter-spacing:1px;display:inline-block">SESIÓN ACTUAL</div>
     </div>
-
     <div class="session-teaser">
       <div class="session-num">02</div>
-      <h3 style="font-size:1.1rem;color:var(--t1)">Hands-On: Implementacion</h3>
-      <p style="font-size:.82rem;color:var(--t2);margin-top:8px;line-height:1.5">Arquitectura tecnica, pipelines de datos, primeros modelos, integracion con sistemas mineros, workshop practico.</p>
-      <div class="coming-badge">PROXIMAMENTE</div>
+      <h3 style="font-size:1.1rem;color:var(--t1)">Hands-On: Implementación</h3>
+      <p style="font-size:.82rem;color:var(--t2);margin-top:8px;line-height:1.5">Arquitectura técnica, pipelines de datos, primeros modelos, integración con sistemas mineros, workshop práctico.</p>
+      <div class="coming-badge">PRÓXIMAMENTE</div>
     </div>
-
     <div class="session-teaser">
       <div class="session-num">03</div>
       <h3 style="font-size:1.1rem;color:var(--t1)">Agentes y Escala</h3>
-      <p style="font-size:.82rem;color:var(--t2);margin-top:8px;line-height:1.5">Agentes IA en produccion, MCP, multi-agente, roadmap 12 meses, plan de accion personalizado.</p>
-      <div class="coming-badge">PROXIMAMENTE</div>
+      <p style="font-size:.82rem;color:var(--t2);margin-top:8px;line-height:1.5">Agentes IA en producción, MCP, multi-agente, roadmap 12 meses, plan de acción personalizado.</p>
+      <div class="coming-badge">PRÓXIMAMENTE</div>
     </div>
   </div>
 </section>
 
-<!-- ===== 13. BIBLIOGRAFIA ===== -->
+<!-- ===== 14. BIBLIOGRAFÍA ===== -->
 <section class="S" id="biblio">
-  <div class="sn">11 — Bibliografia</div>
-  <h2>Bibliografia Referenciada<br>IA en Mineria — Sesion 1</h2>
-  <p class="sub">Todas las fuentes utilizadas en esta presentacion, verificadas y con acceso publico.</p>
+  <div class="sn">12 — Bibliografía</div>
+  <h2>Bibliografía Referenciada<br>IA en Minería — Sesión 1</h2>
+  <p class="sub">Todas las fuentes utilizadas en esta presentación, verificadas y con acceso público.</p>
 
   <h3 style="margin-top:28px;">Estudios y Reportes Globales</h3>
   <div class="ao">
-    <div class="bib-item"><strong>Google Cloud & National Research Group (2025).</strong> "El ROI de la IA en la Experiencia del Cliente." Encuesta a 3,466 lideres senior globales, abril-junio 2025.</div>
-    <div class="bib-item"><strong>MIT NANDA Initiative (2025).</strong> "95% of Generative AI Pilots at Companies Are Failing." Publicado en <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/" target="_blank">Fortune, agosto 2025</a>.</div>
-    <div class="bib-item"><strong>RAND Corporation.</strong> "More than 80% of AI projects fail, at twice the rate of non-AI IT projects." Citado en <a href="https://www.pertamapartners.com/insights/ai-project-failure-statistics-2026" target="_blank">Pertama Partners, 2026</a>.</div>
-    <div class="bib-item"><strong>McKinsey (2026).</strong> "State of AI Trust in 2026: Shifting to the Agentic Era." AI Trust Maturity Survey, ~500 organizaciones. <a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/tech-forward/state-of-ai-trust-in-2026-shifting-to-the-agentic-era" target="_blank">mckinsey.com</a></div>
-    <div class="bib-item"><strong>Forrester (2025).</strong> "The Total Economic Impact of Google Cloud Customer Engagement Suite With Google AI." ROI 207% en 3 anos, payback &lt; 6 meses.</div>
-    <div class="bib-item"><strong>BCG (2026).</strong> "The AI-Powered Mining and Metals Company." <a href="https://www.bcg.com/publications/2026/the-ai-powered-mining-and-metals-company" target="_blank">bcg.com</a></div>
-    <div class="bib-item"><strong>Gartner (2025-2026).</strong> AI Maturity Model; "Lack of AI-Ready Data Puts AI Projects at Risk" (Feb 2025); prediccion de abandono del 60% de proyectos IA por calidad de datos.</div>
-    <div class="bib-item"><strong>AI Governance Today (2026).</strong> "The $665 Billion AI Spending Crisis: Why 73% of Enterprise AI Projects Fail to Deliver ROI." <a href="https://www.aigovernancetoday.com/news/enterprise-ai-spending-crisis-2026" target="_blank">aigovernancetoday.com</a></div>
-    <div class="bib-item"><strong>NVIDIA (2025).</strong> "State of AI: Enterprise Survey." Retorno de $3.7x por cada $1 invertido en GenAI.</div>
+    <div class="bib-item"><strong>Deloitte (2026).</strong> "State of AI in the Enterprise." 66% logran productividad, 20% tienen gobernanza madura, brecha de habilidades es barrera #1. <a href="https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html" target="_blank">deloitte.com</a></div>
+    <div class="bib-item"><strong>Google Cloud &amp; National Research Group (2025).</strong> "El ROI de la IA." Encuesta a 3,466 líderes senior globales, abril-junio 2025. 88% de pioneros con ROI positivo.</div>
+    <div class="bib-item"><strong>McKinsey (2026).</strong> "State of AI Trust in 2026: Shifting to the Agentic Era." AI Trust Maturity Survey. <a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/tech-forward/state-of-ai-trust-in-2026-shifting-to-the-agentic-era" target="_blank">mckinsey.com</a></div>
+    <div class="bib-item"><strong>RAND Corporation.</strong> "More than 80% of AI projects fail, at twice the rate of non-AI IT projects."</div>
+    <div class="bib-item"><strong>Forrester (2025).</strong> "The Total Economic Impact of Google Cloud Customer Engagement Suite With Google AI." ROI 207% en 3 años (estudio comisionado).</div>
+    <div class="bib-item"><strong>NVIDIA (2025).</strong> "State of AI: Enterprise Survey." Retorno de $3.7x por cada $1 invertido en GenAI (encuesta patrocinada).</div>
+    <div class="bib-item"><strong>Gartner (2025).</strong> "Lack of AI-Ready Data Puts AI Projects at Risk." Al menos 30% de proyectos GenAI abandonados post-PoC por calidad de datos.</div>
+    <div class="bib-item"><strong>Keyhole Software (2026).</strong> "AI Software Development Costs 2026." <a href="https://keyholesoftware.com/ai-software-development-cost-2026/" target="_blank">keyholesoftware.com</a></div>
   </div>
 
-  <h3 style="margin-top:28px;">IA en Mineria</h3>
+  <h3 style="margin-top:28px;">IA en Minería</h3>
   <div class="ao">
-    <div class="bib-item"><strong>Precedence Research (2025).</strong> "AI in Mining Market Size to Hit USD 828.33 Billion by 2034." CAGR 41.92%. <a href="https://www.precedenceresearch.com/ai-in-mining-market" target="_blank">precedenceresearch.com</a></div>
+    <div class="bib-item"><strong>Skillings.net (2026).</strong> "AI in Mining: What It Is, Why It Matters — 2026 Outlook." 60-73% de datos sin usar, arquitectura 3 capas. <a href="https://skillings.net/ai-in-mining-what-it-is-why-it-matters-2026-outlook/" target="_blank">skillings.net</a></div>
     <div class="bib-item"><strong>Global Mining Review (2025).</strong> "Five Ways AI Will Transform Mining in 2026." <a href="https://www.globalminingreview.com/mining/19112025/five-ways-ai-will-transform-mining-in-2026/" target="_blank">globalminingreview.com</a></div>
-    <div class="bib-item"><strong>CIM Magazine (2026).</strong> "The Evolving Role of Artificial Intelligence in Mineral Exploration." 77% de empresas usan IA en exploracion. <a href="https://magazine.cim.org/en/news/2026/the-evolving-role-of-artificial-intelligence-in-mineral-exploration-en/" target="_blank">cim.org</a></div>
-    <div class="bib-item"><strong>S&P Global (2025).</strong> "A Peek at AI Revolution in Mining: Promise Meets Peril." <a href="https://www.spglobal.com/market-intelligence/en/news-insights/research/a-peek-at-ai-revolution-in-mining-promise-meets-peril" target="_blank">spglobal.com</a></div>
-    <div class="bib-item"><strong>Rio Tinto (2024-2025).</strong> Annual Report — Mine of the Future / Autonomous Haulage. rio-tinto.com</div>
-    <div class="bib-item"><strong>BCG X (2024).</strong> "AI Transforms Mining Operations in Western Australia." Caso Freeport-McMoRan. <a href="https://www.bcg.com/x/mark-your-moment/how-an-iron-ore-producer-modernized-mining-operations-with-ai" target="_blank">bcg.com</a></div>
+    <div class="bib-item"><strong>CIM Magazine (2026).</strong> "The Evolving Role of AI in Mineral Exploration." 77% de profesionales usan IA. Encuesta VRIFY Technology, 135 profesionales. <a href="https://magazine.cim.org/en/news/2026/the-evolving-role-of-artificial-intelligence-in-mineral-exploration-en/" target="_blank">cim.org</a></div>
+    <div class="bib-item"><strong>Omdena (2026).</strong> "24 Best AI Mining Companies in 2026." Tata Steel 550+ modelos, KoBold Metals, Fortescue, Anglo American. <a href="https://www.omdena.com/blog/top-24-global-mining-companies-driving-ai-transformation-in-2025" target="_blank">omdena.com</a></div>
+    <div class="bib-item"><strong>BCG (2026).</strong> "The AI-Powered Mining and Metals Company." <a href="https://www.bcg.com/publications/2026/the-ai-powered-mining-and-metals-company" target="_blank">bcg.com</a></div>
+    <div class="bib-item"><strong>S&amp;P Global (2025).</strong> "A Peek at AI Revolution in Mining: Promise Meets Peril." <a href="https://www.spglobal.com/market-intelligence/en/news-insights/research/a-peek-at-ai-revolution-in-mining-promise-meets-peril" target="_blank">spglobal.com</a></div>
+    <div class="bib-item"><strong>Rio Tinto, BHP, Freeport-McMoRan, Codelco, Newmont, Vale.</strong> Annual Reports, Sustainability Reports, Investor Days y Technology Alliance disclosures (2022-2025).</div>
   </div>
 
-  <h3 style="margin-top:28px;">Arquitectura, MCP y Agentes</h3>
+  <h3 style="margin-top:28px;">Ética, Gobernanza y Arquitectura</h3>
   <div class="ao">
-    <div class="bib-item"><strong>Anthropic (2024).</strong> Model Context Protocol — estandar abierto. <a href="https://modelcontextprotocol.io/" target="_blank">modelcontextprotocol.io</a></div>
-    <div class="bib-item"><strong>CData (2026).</strong> "2026: The Year for Enterprise-Ready MCP Adoption." <a href="https://www.cdata.com/blog/2026-year-enterprise-ready-mcp-adoption" target="_blank">cdata.com</a></div>
-    <div class="bib-item"><strong>AWS (2023).</strong> "The Future of Mining is in the Cloud." <a href="https://aws.amazon.com/blogs/industries/the-future-of-mining-is-in-the-cloud/" target="_blank">aws.amazon.com</a></div>
-  </div>
-
-  <h3 style="margin-top:28px;">Etica, Gobernanza y Transformacion</h3>
-  <div class="ao">
-    <div class="bib-item"><strong>World Economic Forum (2026).</strong> "Scaling Trustworthy AI." <a href="https://www.weforum.org/stories/2026/01/scaling-trustworthy-ai-into-global-practice/" target="_blank">weforum.org</a></div>
+    <div class="bib-item"><strong>Anthropic (2024).</strong> Model Context Protocol. <a href="https://modelcontextprotocol.io/" target="_blank">modelcontextprotocol.io</a></div>
     <div class="bib-item"><strong>ISO/IEC 42001:2023.</strong> Artificial Intelligence Management System.</div>
     <div class="bib-item"><strong>NIST AI Risk Management Framework.</strong> <a href="https://www.nist.gov/artificial-intelligence" target="_blank">nist.gov</a></div>
-    <div class="bib-item"><strong>California Management Review / UC Berkeley (2025).</strong> "Bridging the Gaps in AI Transformation." <a href="https://cmr.berkeley.edu/2025/11/bridging-the-gaps-in-ai-transformation-an-evidence-based-framework-for-scalable-adoption/" target="_blank">cmr.berkeley.edu</a></div>
-    <div class="bib-item"><strong>Keyhole Software (2026).</strong> "AI Software Development Costs 2026." <a href="https://keyholesoftware.com/ai-software-development-cost-2026/" target="_blank">keyholesoftware.com</a></div>
-    <div class="bib-item"><strong>Integrate.io (2026).</strong> "Data Transformation Challenge Statistics." <a href="https://www.integrate.io/blog/data-transformation-challenge-statistics/" target="_blank">integrate.io</a></div>
+    <div class="bib-item"><strong>World Economic Forum (2026).</strong> "Scaling Trustworthy AI." <a href="https://www.weforum.org/stories/2026/01/scaling-trustworthy-ai-into-global-practice/" target="_blank">weforum.org</a></div>
     <div class="bib-item"><strong>AKF Partners.</strong> "Maximizing AI/ML Impact: Jobs to be Done." <a href="https://akfpartners.com/growth-blog/maximizing-ai-ml-impact-jobs-to-be-done-product-strategy" target="_blank">akfpartners.com</a></div>
   </div>
 </section>
 
 <!-- CIERRE -->
 <section class="S" id="closing" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:80vh;">
-  <div class="badge"><span class="dot"></span>Cierre — Sesion 1 de 3</div>
+  <div class="badge"><span class="dot"></span>Cierre — Sesión 1 de 3</div>
   <h1 style="text-align:center;">Datos → Gobernanza → Cultura<br>→ IA → Valor</h1>
-  <p class="sub" style="text-align:center;max-width:550px;">La IA no es el destino. Es un vehiculo. Y como todo vehiculo, necesita combustible (datos), reglas de transito (gobernanza), un conductor preparado (cultura) y un destino claro (valor de negocio).</p>
+  <p class="sub" style="text-align:center;max-width:550px;">La IA no es el destino. Es un vehículo. Y como todo vehículo, necesita combustible (datos), reglas de tránsito (gobernanza), un conductor preparado (cultura) y un destino claro (valor de negocio).</p>
   <div style="margin-top:44px;display:flex;gap:24px;flex-wrap:wrap;justify-content:center;">
     <div style="text-align:center"><div style="font-size:2.5rem">📊</div><div style="font-weight:700;margin-top:6px;font-size:.9rem">Datos</div></div>
     <div style="font-size:1.5rem;color:var(--azure);display:flex;align-items:center">→</div>
@@ -991,8 +998,8 @@ h3{font-size:1.15rem;font-weight:700;color:var(--azure);margin-bottom:10px}
   <div style="margin-top:48px;padding:20px;background:var(--dark-2);border-radius:14px;border:1px solid var(--dark-4);max-width:420px">
     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_EAFIT.svg" alt="EAFIT" style="height:40px;filter:brightness(0) invert(1);margin-bottom:8px">
     <p style="font-weight:900;font-size:1.1rem;color:var(--azure);letter-spacing:3px">EAFIT — NODO</p>
-    <p style="font-size:.78rem;color:var(--t2);margin-top:6px">Sesion 1 de 3 &middot; Abril 2026</p>
-    <p style="font-size:.68rem;color:var(--t3);margin-top:4px">Proxima sesion: Hands-On Implementacion</p>
+    <p style="font-size:.78rem;color:var(--t2);margin-top:6px">Sesión 1 de 3 &middot; Abril 2026</p>
+    <p style="font-size:.68rem;color:var(--t3);margin-top:4px">Próxima sesión: Hands-On Implementación</p>
   </div>
 </section>
 
@@ -1001,133 +1008,64 @@ h3{font-size:1.15rem;font-weight:700;color:var(--azure);margin-bottom:10px}
 <script>
 // Particles
 const pc=document.getElementById('pts');for(let i=0;i<40;i++){const p=document.createElement('div');p.className='p';p.style.left=Math.random()*100+'%';p.style.animationDelay=Math.random()*8+'s';p.style.animationDuration=(6+Math.random()*6)+'s';pc.appendChild(p)}
-
 // Scroll
 const secs=document.querySelectorAll('.S'),aos=document.querySelectorAll('.ao'),nls=document.querySelectorAll('.nav-links a'),np=document.getElementById('navProg');
 function onScr(){const y=window.scrollY,dh=document.documentElement.scrollHeight-window.innerHeight;np.style.width=(y/dh)*100+'%';secs.forEach(s=>{if(s.getBoundingClientRect().top<window.innerHeight*.75)s.classList.add('vis')});aos.forEach(e=>{if(e.getBoundingClientRect().top<window.innerHeight*.8)e.classList.add('vis')});let c='';secs.forEach(s=>{if(y>=s.offsetTop-200)c=s.id});nls.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+c));document.querySelectorAll('.cv,.hsv').forEach(e=>{if(e.dataset.a)return;if(e.getBoundingClientRect().top<window.innerHeight*.9){e.dataset.a='1';aniC(e)}});document.querySelectorAll('.bf').forEach(e=>{if(e.dataset.a)return;if(e.parentElement.getBoundingClientRect().top<window.innerHeight*.9){e.dataset.a='1';e.style.width=e.dataset.width+'%'}});uDots()}
 window.addEventListener('scroll',onScr);window.addEventListener('load',onScr);
-
 // Dots
 const si=document.getElementById('si');secs.forEach(s=>{const d=document.createElement('div');d.className='sd';d.onclick=()=>s.scrollIntoView({behavior:'smooth'});si.appendChild(d)});
 function uDots(){const ds=si.querySelectorAll('.sd');let ai=0;secs.forEach((s,i)=>{if(window.scrollY>=s.offsetTop-300)ai=i});ds.forEach((d,i)=>d.classList.toggle('active',i===ai))}
-
 // Counter
 function aniC(el){const t=parseFloat(el.dataset.target),sf=el.dataset.suffix||'',pf=el.textContent.startsWith('$')?'$':'',dur=2000,st=performance.now();function u(now){const e=now-st,p=Math.min(e/dur,1),ea=1-Math.pow(1-p,3);let c;if(t<10)c=(t*ea).toFixed(1);else c=Math.round(t*ea).toLocaleString();el.textContent=pf+c+sf;if(p<1)requestAnimationFrame(u)}requestAnimationFrame(u)}
-
 // Tabs
 function switchTab(e,id){const parent=e.target.closest('.S')||document;parent.querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));parent.querySelectorAll('.tc').forEach(c=>c.classList.remove('active'));e.target.classList.add('active');document.getElementById(id).classList.add('active')}
-
 // Accordion
 function toggleAcc(it){it.classList.toggle('open')}
-
 // Transformer viz
 function showTV(i){document.querySelectorAll('.tv-detail').forEach((d,j)=>d.classList.toggle('active',j===i))}
-
 // Discovery
 function showDisc(i){document.querySelectorAll('.disc-phase').forEach((p,j)=>p.classList.toggle('active',j===i));document.querySelectorAll('.disc-detail').forEach((d,j)=>d.classList.toggle('active',j===i))}
-
 // Token demo
 const colors=['rgba(0,169,224,.2)','rgba(167,139,250,.2)','rgba(52,211,153,.2)','rgba(251,146,60,.2)','rgba(248,113,113,.2)','rgba(251,191,36,.2)'];
 const colorsBorder=['rgba(0,169,224,.5)','rgba(167,139,250,.5)','rgba(52,211,153,.5)','rgba(251,146,60,.5)','rgba(248,113,113,.5)','rgba(251,191,36,.5)'];
-function tokenize(text){const out=document.getElementById('tokenOutput'),cnt=document.getElementById('tokenCount');if(!text){out.innerHTML='';cnt.textContent='';return}const words=text.split(/(\s+)/);let tokens=[];words.forEach(w=>{if(/^\s+$/.test(w)){tokens.push(w)}else if(w.length>6){const mid=Math.ceil(w.length/2);tokens.push(w.slice(0,mid));tokens.push(w.slice(mid))}else{tokens.push(w)}});out.innerHTML='';let tCount=0;tokens.forEach(t=>{if(/^\s+$/.test(t))return;tCount++;const chip=document.createElement('span');chip.className='token-chip';const ci=tCount%colors.length;chip.style.background=colors[ci];chip.style.border='1px solid '+colorsBorder[ci];chip.textContent=t;chip.title='Token #'+tCount;out.appendChild(chip)});cnt.textContent=tCount+' tokens (simulacion - tokens reales dependen del modelo)'}
-
+function tokenize(text){const out=document.getElementById('tokenOutput'),cnt=document.getElementById('tokenCount');if(!text){out.innerHTML='';cnt.textContent='';return}const words=text.split(/(\s+)/);let tokens=[];words.forEach(w=>{if(/^\s+$/.test(w)){tokens.push(w)}else if(w.length>6){const mid=Math.ceil(w.length/2);tokens.push(w.slice(0,mid));tokens.push(w.slice(mid))}else{tokens.push(w)}});out.innerHTML='';let tCount=0;tokens.forEach(t=>{if(/^\s+$/.test(t))return;tCount++;const chip=document.createElement('span');chip.className='token-chip';const ci=tCount%colors.length;chip.style.background=colors[ci];chip.style.border='1px solid '+colorsBorder[ci];chip.textContent=t;chip.title='Token #'+tCount;out.appendChild(chip)});cnt.textContent=tCount+' tokens (simulación — tokens reales dependen del modelo)'}
 // Calculator
 function uCalc(){const p=parseInt(document.getElementById('cP').value),g=parseInt(document.getElementById('cG').value),d=parseInt(document.getElementById('cD').value),inv=parseInt(document.getElementById('cI').value);document.getElementById('dP').textContent=p+'K oz';document.getElementById('dG').textContent='$'+g.toLocaleString();document.getElementById('dD').textContent=d+'%';document.getElementById('dI').textContent='$'+inv+'M';const rev=p*1000*g,dtC=rev*.08,sav=dtC*(d/100)+inv*.3*1e6,roi=((sav-inv*1e6)/(inv*1e6))*100,pay=Math.round(inv*1e6/sav*12);document.getElementById('rS').textContent='$'+(sav/1e6).toFixed(1)+'M';document.getElementById('rR').textContent=Math.round(roi)+'%';document.getElementById('rP').textContent=pay+' mo'}
 uCalc();
-
 // Quiz
-function checkQ(el,qid,correct){const container=document.getElementById(qid);if(container.dataset.answered)return;container.dataset.answered='1';const fb=document.getElementById(qid+'-fb');if(correct){el.classList.add('sel');fb.style.background='rgba(52,211,153,.08)';fb.style.border='1px solid rgba(52,211,153,.2)';fb.innerHTML='<strong style="color:var(--green)">Correcto!</strong> '+getQuizFeedback(qid,true)}else{el.classList.add('wrg');container.querySelectorAll('.qo').forEach(o=>{if(!o.classList.contains('wrg')){}});fb.style.background='rgba(248,113,113,.08)';fb.style.border='1px solid rgba(248,113,113,.2)';fb.innerHTML='<strong style="color:var(--red)">No exactamente.</strong> '+getQuizFeedback(qid,false)}fb.classList.add('show')}
-
-function getQuizFeedback(qid,correct){const feedbacks={quiz1:{t:'Un LLM es un predictor estadistico de tokens. No "entiende" — calcula la probabilidad del siguiente token basado en patrones aprendidos durante el entrenamiento. Esta distincion es clave para entender sus limitaciones.',f:'Un LLM no busca en bases de datos ni ejecuta reglas. Predice el siguiente token mas probable. Entender esto es clave para no sobreestimar sus capacidades.'},quiz2:{t:'La preparacion y limpieza de datos consume entre el 30-50% del presupuesto total. Es el costo mas subestimado y la razon #1 de sobrecostos en proyectos de IA.',f:'Aunque el modelo es lo que vemos, la preparacion de datos consume 30-50% del presupuesto total. Es el costo mas subestimado en proyectos de IA.'},quiz3:{t:'Freeport optimizo lo que ya tenia (molinos existentes) con ML, generando $150M/ano adicionales con payback de 3 meses. No requirio CAPEX de hardware autonomo — solo inteligencia sobre el proceso existente.',f:'El caso Freeport es el de payback mas rapido (3 meses) porque optimizo procesos existentes sin CAPEX pesado de hardware. La leccion: el mayor valor suele estar en optimizar lo que ya existe.'}};const f=feedbacks[qid];return correct?f.t:f.f}
-
+function checkQ(el,qid,correct){const container=document.getElementById(qid);if(container.dataset.answered)return;container.dataset.answered='1';const fb=document.getElementById(qid+'-fb');if(correct){el.classList.add('sel');fb.style.background='rgba(52,211,153,.08)';fb.style.border='1px solid rgba(52,211,153,.2)';fb.innerHTML='<strong style="color:var(--green)">¡Correcto!</strong> '+getQuizFeedback(qid,true)}else{el.classList.add('wrg');fb.style.background='rgba(248,113,113,.08)';fb.style.border='1px solid rgba(248,113,113,.2)';fb.innerHTML='<strong style="color:var(--red)">No exactamente.</strong> '+getQuizFeedback(qid,false)}fb.classList.add('show')}
+function getQuizFeedback(qid,correct){const feedbacks={quiz1:{t:'Un LLM es un predictor estadístico de tokens. No "entiende" — calcula la probabilidad del siguiente token basado en patrones aprendidos durante el entrenamiento. Esta distinción es clave para entender sus limitaciones.',f:'Un LLM no busca en bases de datos ni ejecuta reglas. Predice el siguiente token más probable. Entender esto es clave para no sobreestimar sus capacidades.'},quiz2:{t:'La preparación y limpieza de datos consume entre el 30-50% del presupuesto total. Es el costo más subestimado y la razón #1 de sobrecostos en proyectos de IA.',f:'Aunque el modelo es lo que vemos, la preparación de datos consume 30-50% del presupuesto total. Es el costo más subestimado en proyectos de IA.'},quiz3:{t:'Freeport optimizó lo que ya tenía (molinos existentes) con ML, generando ~$150M/año adicionales con payback de 3 meses. No requirió CAPEX de hardware autónomo — sólo inteligencia sobre el proceso existente.',f:'El caso Freeport es el de payback más rápido (3 meses) porque optimizó procesos existentes sin CAPEX pesado de hardware. La lección: el mayor valor suele estar en optimizar lo que ya existe.'}};const f=feedbacks[qid];return correct?f.t:f.f}
 // Simulator
 function showSim(i,btn){document.querySelectorAll('.sim-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.sim-result').forEach(r=>r.classList.remove('active'));btn.classList.add('active');document.getElementById('sim-'+i).classList.add('active')}
-
+// Strategy
+function showStrat(i,btn){document.querySelectorAll('.strat-card').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.strat-detail').forEach(r=>r.classList.remove('active'));btn.classList.add('active');document.getElementById('strat-'+i).classList.add('active')}
 // Radar Chart
-const radarLabels=['Datos','Gobernanza','Talento','Infra','Cultura','Liderazgo','Casos Uso','Etica'];
+const radarLabels=['Datos','Gobernanza','Talento','Infra','Cultura','Liderazgo','Casos Uso','Ética'];
 const radarValues=[2,2,2,2,2,2,1,2];
 const benchmarkValues=[2.5,2.2,2.0,2.8,2.1,2.4,1.8,2.0];
-
 function drawRadar(){
   const canvas=document.getElementById('radarCanvas');if(!canvas)return;
   const ctx=canvas.getContext('2d');
   const W=canvas.width,H=canvas.height,cx=W/2,cy=H/2,R=150;
   ctx.clearRect(0,0,W,H);
   const n=radarLabels.length;
-  // Grid
-  for(let level=1;level<=5;level++){
-    ctx.beginPath();
-    for(let i=0;i<=n;i++){
-      const angle=(Math.PI*2/n)*i-Math.PI/2;
-      const r=R*(level/5);
-      const x=cx+r*Math.cos(angle);
-      const y=cy+r*Math.sin(angle);
-      i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
-    }
-    ctx.strokeStyle='rgba(160,168,200,.12)';ctx.lineWidth=1;ctx.stroke();
-  }
-  // Axes
-  for(let i=0;i<n;i++){
-    const angle=(Math.PI*2/n)*i-Math.PI/2;
-    ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+R*Math.cos(angle),cy+R*Math.sin(angle));ctx.strokeStyle='rgba(160,168,200,.08)';ctx.stroke();
-  }
-  // Benchmark
-  ctx.beginPath();
-  for(let i=0;i<=n;i++){
-    const idx=i%n;
-    const angle=(Math.PI*2/n)*idx-Math.PI/2;
-    const r=R*(benchmarkValues[idx]/5);
-    const x=cx+r*Math.cos(angle),y=cy+r*Math.sin(angle);
-    i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
-  }
-  ctx.strokeStyle='rgba(167,139,250,.5)';ctx.lineWidth=2;ctx.setLineDash([5,5]);ctx.stroke();ctx.setLineDash([]);
-  ctx.fillStyle='rgba(167,139,250,.05)';ctx.fill();
-  // Values
-  ctx.beginPath();
-  for(let i=0;i<=n;i++){
-    const idx=i%n;
-    const angle=(Math.PI*2/n)*idx-Math.PI/2;
-    const r=R*(radarValues[idx]/5);
-    const x=cx+r*Math.cos(angle),y=cy+r*Math.sin(angle);
-    i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
-  }
-  ctx.strokeStyle='rgba(0,169,224,.8)';ctx.lineWidth=2.5;ctx.stroke();
-  ctx.fillStyle='rgba(0,169,224,.12)';ctx.fill();
-  // Dots
-  for(let i=0;i<n;i++){
-    const angle=(Math.PI*2/n)*i-Math.PI/2;
-    const r=R*(radarValues[i]/5);
-    ctx.beginPath();ctx.arc(cx+r*Math.cos(angle),cy+r*Math.sin(angle),4,0,Math.PI*2);ctx.fillStyle='#00A9E0';ctx.fill();ctx.strokeStyle='var(--dark)';ctx.lineWidth=2;ctx.stroke();
-  }
-  // Labels
+  for(let level=1;level<=5;level++){ctx.beginPath();for(let i=0;i<=n;i++){const angle=(Math.PI*2/n)*i-Math.PI/2;const r=R*(level/5);const x=cx+r*Math.cos(angle);const y=cy+r*Math.sin(angle);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y)}ctx.strokeStyle='rgba(160,168,200,.12)';ctx.lineWidth=1;ctx.stroke()}
+  for(let i=0;i<n;i++){const angle=(Math.PI*2/n)*i-Math.PI/2;ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+R*Math.cos(angle),cy+R*Math.sin(angle));ctx.strokeStyle='rgba(160,168,200,.08)';ctx.stroke()}
+  ctx.beginPath();for(let i=0;i<=n;i++){const idx=i%n;const angle=(Math.PI*2/n)*idx-Math.PI/2;const r=R*(benchmarkValues[idx]/5);const x=cx+r*Math.cos(angle),y=cy+r*Math.sin(angle);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y)}ctx.strokeStyle='rgba(167,139,250,.5)';ctx.lineWidth=2;ctx.setLineDash([5,5]);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='rgba(167,139,250,.05)';ctx.fill();
+  ctx.beginPath();for(let i=0;i<=n;i++){const idx=i%n;const angle=(Math.PI*2/n)*idx-Math.PI/2;const r=R*(radarValues[idx]/5);const x=cx+r*Math.cos(angle),y=cy+r*Math.sin(angle);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y)}ctx.strokeStyle='rgba(0,169,224,.8)';ctx.lineWidth=2.5;ctx.stroke();ctx.fillStyle='rgba(0,169,224,.12)';ctx.fill();
+  for(let i=0;i<n;i++){const angle=(Math.PI*2/n)*i-Math.PI/2;const r=R*(radarValues[i]/5);ctx.beginPath();ctx.arc(cx+r*Math.cos(angle),cy+r*Math.sin(angle),4,0,Math.PI*2);ctx.fillStyle='#00A9E0';ctx.fill();ctx.strokeStyle='#060612';ctx.lineWidth=2;ctx.stroke()}
   ctx.font='600 11px Inter,sans-serif';ctx.fillStyle='#A0A8C8';ctx.textAlign='center';ctx.textBaseline='middle';
-  for(let i=0;i<n;i++){
-    const angle=(Math.PI*2/n)*i-Math.PI/2;
-    const lr=R+24;
-    ctx.fillText(radarLabels[i],cx+lr*Math.cos(angle),cy+lr*Math.sin(angle));
-  }
-  // Legend
+  for(let i=0;i<n;i++){const angle=(Math.PI*2/n)*i-Math.PI/2;const lr=R+24;ctx.fillText(radarLabels[i],cx+lr*Math.cos(angle),cy+lr*Math.sin(angle))}
   ctx.font='500 10px Inter,sans-serif';
-  ctx.fillStyle='rgba(0,169,224,.8)';ctx.fillRect(cx-70,H-30,12,3);ctx.fillText('Tu organizacion',cx-20,H-28);
-  ctx.fillStyle='rgba(167,139,250,.5)';ctx.setLineDash([3,3]);ctx.beginPath();ctx.moveTo(cx+30,H-29);ctx.lineTo(cx+42,H-29);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='rgba(167,139,250,.8)';ctx.fillText('Benchmark industria',cx+80,H-28);
-  // Score
+  ctx.fillStyle='rgba(0,169,224,.8)';ctx.fillRect(cx-70,H-30,12,3);ctx.fillText('Tu organización',cx-15,H-28);
+  ctx.fillStyle='rgba(167,139,250,.5)';ctx.setLineDash([3,3]);ctx.beginPath();ctx.moveTo(cx+35,H-29);ctx.lineTo(cx+47,H-29);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='rgba(167,139,250,.8)';ctx.fillText('Benchmark industria',cx+85,H-28);
   const avg=(radarValues.reduce((a,b)=>a+b,0)/n).toFixed(1);
   document.getElementById('scoreVal').textContent=avg+'/5';
-  const levels=['','REACTIVO — Preparacion necesaria','DEFINIDO — Bases establecidas','FUNCIONAL — Listo para IA','AVANZADO — Escalando IA','OPTIMIZADO — IA sistemica'];
-  document.getElementById('scoreLabel').textContent='NIVEL '+levels[Math.round(parseFloat(avg))];
-}
-
-function updateRadar(i,val){
-  radarValues[i]=parseInt(val);
-  const wrap=document.querySelectorAll('.assess-val')[i];
-  if(wrap)wrap.textContent=val;
-  drawRadar();
-}
-
+  const levels=['','REACTIVO — Preparación necesaria','DEFINIDO — Bases establecidas','FUNCIONAL — Listo para IA','AVANZADO — Escalando IA','OPTIMIZADO — IA sistémica'];
+  document.getElementById('scoreLabel').textContent='NIVEL '+levels[Math.round(parseFloat(avg))]}
+function updateRadar(i,val){radarValues[i]=parseInt(val);const wrap=document.querySelectorAll('.assess-val')[i];if(wrap)wrap.textContent=val;drawRadar()}
 // Keyboard
 document.addEventListener('keydown',e=>{let ci=0;secs.forEach((s,i)=>{if(window.scrollY>=s.offsetTop-300)ci=i});if(e.key==='ArrowDown'||e.key==='ArrowRight'||e.key===' '){e.preventDefault();secs[Math.min(ci+1,secs.length-1)].scrollIntoView({behavior:'smooth'})}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();secs[Math.max(ci-1,0)].scrollIntoView({behavior:'smooth'})}});
-
-// Init
 window.addEventListener('load',()=>{drawRadar()});
 </script>
 </body>
